@@ -36,38 +36,29 @@ export default function Home() {
         <h2 className="text-3xl font-semibold mb-6">About Me</h2>
 
         <div className="mb-8">
-          <h3 className="text-xl font-semibold mb-4">Overview</h3>
           <p className="text-lg leading-relaxed mb-4">
-            I'm Dave Ishii — a Fintech and AI entrepreneur with a background in pure mathematics, fashion business, and
-            international market development. As Founder & CEO of{" "}
-            <span className="font-medium">Kiara Inc.</span>, I build products that bridge technology and
-            human experience, like the Kiara Translator app for multilingual teams.
+            I'm Dave Ishii — a Fintech and AI entrepreneur with a background in pure mathematics, fashion business, and international market development.
           </p>
           <p className="text-lg leading-relaxed mb-4">
-            I focus on Human-Finance Interaction research, digital identity (eKYC), and innovation at the crossroads
-            of finance, AI, and business strategy. Previously at Itochu Corp., I led global fashion brand expansions
-            in Europe and Japan, working as an expatriate in the UK and Italy.
+            As Founder & CEO of Kiara Inc., I build products that bridge technology and human experience, like the Kiara Translator app for multilingual teams.
+          </p>
+          <p className="text-lg leading-relaxed mb-4">
+            Previously at Itochu Corp., I led global fashion brand expansions in Europe and Japan.
+          </p>
+          <p className="text-lg leading-relaxed mb-4">
+            Today, I focus on Human-Finance Interaction research, digital identity (eKYC), and innovation at the crossroads of finance, AI, and business strategy.
           </p>
           <p className="text-lg leading-relaxed">
-            I hold a degree in Mathematics and Fashion History from Kyoto University, combining analytical rigor
-            with creative business thinking. My journey spans from developing cutting-edge translation technology to
-            pioneering eKYC solutions and international market development.
+            I share insights regularly through publications, patents, and media, helping organizations navigate transformation with clarity and speed.
           </p>
         </div>
 
         <div className="mb-8">
-          <h3 className="text-xl font-semibold mb-4">Core Skills & Expertise</h3>
+          <h3 className="text-xl font-semibold mb-4">Top Skills</h3>
           <div className="flex flex-wrap gap-2">
-            <Badge variant="secondary">Fintech Innovation</Badge>
-            <Badge variant="secondary">AI & Machine Learning</Badge>
-            <Badge variant="secondary">eKYC Solutions</Badge>
+            <Badge variant="secondary">Regula Face SDK</Badge>
+            <Badge variant="secondary">vKYC – Video KYC/CIP Solution</Badge>
             <Badge variant="secondary">Face Recognition</Badge>
-            <Badge variant="secondary">International Business</Badge>
-            <Badge variant="secondary">Product Development</Badge>
-            <Badge variant="secondary">Market Expansion</Badge>
-            <Badge variant="secondary">Digital Identity</Badge>
-            <Badge variant="secondary">Multilingual Translation</Badge>
-            <Badge variant="secondary">Strategic Partnerships</Badge>
           </div>
         </div>
 
@@ -95,7 +86,7 @@ export default function Home() {
                 <h3 className="text-xl font-semibold">Founder & CEO</h3>
                 <p className="text-muted-foreground">Kiara Inc.</p>
               </div>
-              <span className="text-sm text-muted-foreground">2011 — Present</span>
+              <span className="text-sm text-muted-foreground">August 2011 — Present</span>
             </div>
             <p className="leading-relaxed mb-4">
               Building products that bridge technology and human experience. Kiara Translator is a real-time
@@ -117,7 +108,7 @@ export default function Home() {
                 <h3 className="text-xl font-semibold">International Sales Director</h3>
                 <p className="text-muted-foreground">Liquid Inc.</p>
               </div>
-              <span className="text-sm text-muted-foreground">2024 — 2025</span>
+              <span className="text-sm text-muted-foreground">November 2024 — October 2025</span>
             </div>
             <p className="leading-relaxed mb-4">
               Leading digital identity verification solutions through Liquid eKYC, enabling businesses to verify
@@ -139,7 +130,7 @@ export default function Home() {
                 <h3 className="text-xl font-semibold">Product Innovation Director</h3>
                 <p className="text-muted-foreground">CUUSOO SYSTEM</p>
               </div>
-              <span className="text-sm text-muted-foreground">2009 — 2010</span>
+              <span className="text-sm text-muted-foreground">October 2009 — April 2010</span>
             </div>
             <p className="leading-relaxed mb-4">
               Spearheaded the revolutionary Cuusoo System, redefining innovation and community engagement in
@@ -160,7 +151,7 @@ export default function Home() {
                 <h3 className="text-xl font-semibold">Sales Representative</h3>
                 <p className="text-muted-foreground">ITOCHU Corporation</p>
               </div>
-              <span className="text-sm text-muted-foreground">1998 — 2009</span>
+              <span className="text-sm text-muted-foreground">April 1998 — June 2009</span>
             </div>
             <p className="leading-relaxed mb-4">
               Developed strategic business initiatives and international market expansion for renowned global
