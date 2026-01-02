@@ -12,10 +12,33 @@ const navigation = [
   {
     title: "Experience",
     items: [
-      { title: "Kiara Inc.", href: "#kiara" },
-      { title: "Liquid Inc.", href: "#liquid" },
-      { title: "CUUSOO SYSTEM", href: "#cuusoo" },
-      { title: "ITOCHU Corporation", href: "#itochu" },
+      {
+        title: "Kiara Inc.",
+        items: [
+          { title: "Overview", href: "#kiara" },
+          { title: "Key Features", href: "#kiara-features" },
+          { title: "Impact", href: "#kiara-impact" },
+        ]
+      },
+      {
+        title: "Liquid Inc.",
+        items: [
+          { title: "Overview", href: "#liquid" },
+          { title: "eKYC Technology", href: "#liquid-ekyc" },
+        ]
+      },
+      {
+        title: "CUUSOO SYSTEM",
+        items: [
+          { title: "Overview", href: "#cuusoo" },
+        ]
+      },
+      {
+        title: "ITOCHU Corporation",
+        items: [
+          { title: "Overview", href: "#itochu" },
+        ]
+      },
     ],
   },
   {
@@ -91,15 +114,18 @@ export default function Home() {
             <p className="leading-relaxed mb-4">
               Kiara Translator is a real-time multilingual translation app designed for Slack, enabling seamless communication across language barriers within teams. It supports over 100 languages and integrates directly into Slack, automatically translating messages to enhance productivity and inclusivity.
             </p>
-            <div className="mb-4">
+            <div className="mb-4" id="kiara-features">
               <p className="font-semibold mb-2">Key Features and Strengths</p>
               <ul className="list-disc list-inside space-y-1 leading-relaxed">
                 <li><strong>Real-Time Translation:</strong> Messages are translated instantly within Slack, facilitating smooth conversations among team members who speak different languages.</li>
                 <li><strong>Broad Language Support:</strong> Kiara supports over 100 languages, making it suitable for diverse, global teams.</li>
                 <li><strong>User-Friendly Integration:</strong> As a Slack plugin, Kiara offers a straightforward setup with no hidden fees, allowing teams to start using it immediately without complex configurations.</li>
                 <li><strong>Affordable Pricing:</strong> Kiara provides various pricing plans to accommodate different team sizes, starting at $30 per month for up to 10 users.</li>
-                <li><strong>Proven Effectiveness:</strong> Kiara has been utilized in significant projects, such as supporting 2,000 social innovators at MIT's global hackathon by translating Spanish and Portuguese, demonstrating its reliability in high-stakes environments.</li>
               </ul>
+            </div>
+            <div id="kiara-impact">
+              <p className="font-semibold mb-2">Impact</p>
+              <p className="leading-relaxed"><strong>Proven Effectiveness:</strong> Kiara has been utilized in significant projects, such as supporting 2,000 social innovators at MIT's global hackathon by translating Spanish and Portuguese, demonstrating its reliability in high-stakes environments.</p>
             </div>
           </Card>
 
@@ -114,8 +140,8 @@ export default function Home() {
             <p className="leading-relaxed mb-4">
               Liquid eKYC is a fully digital process that businesses use to verify a customer's identity online, without needing physical paperwork.
             </p>
-            <div className="mb-4">
-              <p className="font-semibold mb-2">Strengths:</p>
+            <div className="mb-4" id="liquid-ekyc">
+              <p className="font-semibold mb-2">eKYC Technology Strengths</p>
               <ul className="list-disc list-inside space-y-1 leading-relaxed">
                 <li><strong>Fast and Easy:</strong> Customers can get verified quickly—usually within minutes, instead of days.</li>
                 <li><strong>Lower Costs:</strong> Businesses save money because they don't have to handle paper documents or manual checking.</li>
