@@ -123,7 +123,10 @@
     @apply bg-background text-foreground;
   }
   html {
-    scroll-padding-top: 4rem; /* Account for 64px (h-16) sticky header */
+    scroll-padding-top: 5rem; /* Account for 64px (h-16) sticky header */
+  }
+  section {
+    scroll-margin-top: 5rem; /* Account for sticky header */
   }
 }
 
