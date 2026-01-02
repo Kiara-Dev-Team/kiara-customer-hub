@@ -67,6 +67,7 @@ export function TopNavigation({ navigation, title, activeSection, onSectionChang
               height={40}
               priority
             />
+          </Link>
           <Link href="/" className="text-xl font-semibold hover:opacity-80 transition-opacity">
             {title || "Dave Ishii"}
           </Link>
