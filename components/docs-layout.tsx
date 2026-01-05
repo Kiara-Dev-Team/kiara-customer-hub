@@ -28,14 +28,6 @@ function SidebarNavItem({ item, level = 0, currentHash }: { item: NavItem; level
   }
   const hasActiveChild = hasChildren && item.items ? checkActiveChild(item.items) : false
 
-  // Debug logging
-  if (level === 0) {
-    console.log(`${item.title}: hasActiveChild=${hasActiveChild}, currentHash=${currentHash}`)
-  }
-  if (item.href) {
-    console.log(`  ${item.title} (${item.href}): isActive=${isActive}`)
-  }
-
   return (
     <div>
       {item.href ? (
@@ -104,7 +96,6 @@ export function DocsLayout({ navigation, children, title }: DocsLayoutProps) {
   React.useEffect(() => {
     const updateHash = () => {
       const hash = window.location.hash || "#about"
-      console.log("Hash changed to:", hash)
       setCurrentHash(hash)
 
       // Check if hash belongs to Experience section
