@@ -53,9 +53,10 @@ const navigation = [
 
 export default function Home() {
   return (
-    <DocsLayout navigation={navigation} title="WELCOME, I'M DAVE">
+    <DocsLayout navigation={navigation}>
       {/* About Section */}
       <section id="about" className="mb-16">
+        <h1 className="text-4xl font-bold mb-8">Hello, I'm Dave Ishii</h1>
         <h2 className="text-3xl font-semibold mb-6">About Me</h2>
 
         <div className="mb-8">

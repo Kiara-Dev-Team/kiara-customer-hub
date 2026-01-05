@@ -58,26 +58,11 @@ export function TopNavigation({ navigation, title, activeSection, onSectionChang
   }
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-[#ffffff] dark:bg-background border-b">
-      {/* Layer 1: Logo, Search (centered), Ask AI */}
-      <div>
-        <div className="container mx-auto flex h-16 items-center px-6">
-          {/* Logo */}
-          <div className="flex items-center">
-            <Link href="/" className="hover:opacity-90 transition-opacity">
-              <Image
-                src="/kiara-logo.png"
-                alt="Kiara"
-                width={120}
-                height={40}
-                priority
-              />
-            </Link>
-          </div>
     <header className="sticky top-0 z-50 w-full border-b bg-[#ffffff] dark:bg-background">
-      <nav className="container mx-auto flex h-16 items-center justify-between px-6">
-        {/* Logo/Title */}
-        <div className="flex items-center mr-8">
+      {/* Layer 1: Logo, Search, and Mobile Menu */}
+      <div className="container mx-auto flex h-16 items-center justify-between px-6">
+        {/* Logo */}
+        <div className="flex items-center">
           <Link href="/" className="hover:opacity-90 transition-opacity">
             <Image
               src="/kiara-logo.png"
@@ -87,40 +72,36 @@ export function TopNavigation({ navigation, title, activeSection, onSectionChang
               priority
             />
           </Link>
-          <Link href="/" className="text-xl font-semibold hover:opacity-80 transition-opacity">
-            {title || "Dave Ishii"}
-          </Link>
         </div>
 
-          {/* Centered Search & AI */}
-          <div className="flex-1 flex items-center justify-center gap-2">
-            <SearchDialog />
-            <AskAiButton />
-          </div>
+        {/* Centered Search & AI */}
+        <div className="flex-1 flex items-center justify-center gap-2">
+          <SearchDialog />
+          <AskAiButton />
+        </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden p-2"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          <svg
+            className="h-6 w-6"
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
           >
-            <svg
-              className="h-6 w-6"
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              {isMobileMenuOpen ? (
-                <path d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </button>
-        </div>
+            {isMobileMenuOpen ? (
+              <path d="M6 18L18 6M6 6l12 12" />
+            ) : (
+              <path d="M4 6h16M4 12h16M4 18h16" />
+            )}
+          </svg>
+        </button>
       </div>
 
       {/* Layer 2: Navigation Tabs & Utility Dropdowns */}
