@@ -5,6 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
 import { SearchDialog } from "@/components/search-dialog"
+import { AskAiButton } from "@/components/ask-ai-button"
 
 export interface NavItem {
   title: string
@@ -122,9 +123,10 @@ export function TopNavigation({ navigation, title, activeSection, onSectionChang
           })}
         </div>
 
-        {/* Search */}
+        {/* Search & AI */}
         <div className="flex items-center gap-2">
           <SearchDialog />
+          <AskAiButton />
         </div>
 
         {/* Mobile Menu Button */}
