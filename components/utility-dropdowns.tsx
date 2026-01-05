@@ -51,7 +51,7 @@ export function UtilityDropdowns() {
             </a>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
-            <a href="#" className="cursor-pointer">
+            <a href="https://www.getkiara.com/contact" target="_blank" rel="noopener noreferrer" className="cursor-pointer">
               Contact sales
             </a>
           </DropdownMenuItem>
