@@ -49,16 +49,6 @@ const navigation = [
     title: "Contact",
     href: "#contact",
   },
-  {
-    title: "Resources",
-    items: [
-      { title: "FAQ", href: "/faq" },
-      { title: "Quick Links", href: "/quick" },
-      { title: "Service Level", href: "/service-level" },
-      { title: "Roadmap", href: "/roadmap" },
-      { title: "Contact Us", href: "/contact" },
-    ],
-  },
 ]
 
 export default function Home() {

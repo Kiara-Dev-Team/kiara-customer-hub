@@ -46,8 +46,28 @@ export function UtilityDropdowns() {
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-48">
           <DropdownMenuItem asChild>
-            <a href="#" className="cursor-pointer">
-              Support
+            <a href="/faq" className="cursor-pointer">
+              FAQ
+            </a>
+          </DropdownMenuItem>
+          <DropdownMenuItem asChild>
+            <a href="/quick" className="cursor-pointer">
+              Quick Links
+            </a>
+          </DropdownMenuItem>
+          <DropdownMenuItem asChild>
+            <a href="/service-level" className="cursor-pointer">
+              Service Level
+            </a>
+          </DropdownMenuItem>
+          <DropdownMenuItem asChild>
+            <a href="/roadmap" className="cursor-pointer">
+              Roadmap
+            </a>
+          </DropdownMenuItem>
+          <DropdownMenuItem asChild>
+            <a href="/contact" className="cursor-pointer">
+              Contact Support
             </a>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
