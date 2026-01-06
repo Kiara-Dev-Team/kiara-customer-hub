@@ -1,0 +1,259 @@
+{
+  "questions_answers": [
+    {
+      "id": 1,
+      "category": "Quick Start",
+      "question": "How do I install Kiara?",
+      "answer": "To install Kiara to your Slack workspace: 1) Access the Kiara website, 2) Click 'Try create it free for 14 days' button on the top page, 3) Follow the on-screen instructions",
+      "article_slug": "install-kiara",
+      "tags": ["installation", "setup", "getting-started"]
+    },
+    {
+      "id": 2,
+      "category": "Quick Start",
+      "question": "What should I check before installing Kiara?",
+      "answer": "Check how many users are in your Slack workspace beforehand. Ensure the number of people registered with Kiara matches the actual number of people in your Slack workspace, otherwise Kiara might not work.",
+      "article_slug": "before-install",
+      "tags": ["installation", "setup", "prerequisites"]
+    },
+    {
+      "id": 3,
+      "category": "Quick Start",
+      "question": "What languages does Kiara support?",
+      "answer": "Kiara supports 100 languages including major world languages like English, Spanish, Chinese, Arabic, French, as well as regional and Asian languages. If your language is not on the list, contact them via form or hello@kiara.team.",
+      "article_slug": "languages",
+      "tags": ["languages", "supported-languages", "features"]
+    },
+    {
+      "id": 4,
+      "category": "How to Use",
+      "question": "How do I add or delete languages?",
+      "answer": "Say '@kiara' in the message box, then press 'Add' or 'Delete' button and select the language you want to add or remove.",
+      "article_slug": "delete-add-languages",
+      "tags": ["languages", "settings", "configuration"]
+    },
+    {
+      "id": 5,
+      "category": "How to Use",
+      "question": "How do I turn translation on or off?",
+      "answer": "Say '@kiara' in the message box, click 'Setting' and toggle 'Translation' on or off.",
+      "article_slug": "translation-function",
+      "tags": ["translation", "settings", "toggle"]
+    },
+    {
+      "id": 6,
+      "category": "How to Use",
+      "question": "What is 'Translation in reply' mode?",
+      "answer": "When the timeline feels too noisy, you can activate 'Translation in reply' mode to reduce timeline noise. Say '@kiara', click 'Setting', and set 'Translation in reply'.",
+      "article_slug": "translation-in-reply",
+      "tags": ["translation", "reply-mode", "settings"]
+    },
+    {
+      "id": 7,
+      "category": "How to Use",
+      "question": "What is 'Status' and 'Consumption'?",
+      "answer": "Status shows the languages you set and consumption. Consumption shows the number of characters and percentage used. As of Jan 2021, translation is unlimited so you don't need to worry about it.",
+      "article_slug": "status-consumption",
+      "tags": ["status", "consumption", "usage"]
+    },
+    {
+      "id": 8,
+      "category": "How to Use",
+      "question": "How do I invite Kiara to a channel?",
+      "answer": "Simply say '@kiara' in the message box to invite Kiara to a channel.",
+      "article_slug": "invite-kiara",
+      "tags": ["channels", "invitation", "setup"]
+    },
+    {
+      "id": 9,
+      "category": "FAQ",
+      "question": "Do you have 'translation memory' or 'glossary'?",
+      "answer": "No. If you need to download translation results or want such dashboard, we will consider building it. Please tell us if necessary.",
+      "article_slug": "translation-memory",
+      "tags": ["features", "translation-memory", "glossary"]
+    },
+    {
+      "id": 10,
+      "category": "FAQ",
+      "question": "Are mentions (@someone) and channels (#channel) translated properly?",
+      "answer": "Mentions are translated properly. Channels are translated properly in some languages but show differently in other languages.",
+      "article_slug": "mentions-channels",
+      "tags": ["mentions", "channels", "translation"]
+    },
+    {
+      "id": 11,
+      "category": "FAQ",
+      "question": "Can I show only one language translation?",
+      "answer": "No. We cannot provide this feature at the moment. Since some customers asked the same issue, we will implement when we are ready.",
+      "article_slug": "shown-language",
+      "tags": ["languages", "settings", "feature-request"]
+    },
+    {
+      "id": 12,
+      "category": "FAQ",
+      "question": "Can I add my original translation via Kiara?",
+      "answer": "No. We cannot provide this feature at the moment. Since some customers asked us, we will try to implement this when we are ready.",
+      "article_slug": "add-translation",
+      "tags": ["custom-translation", "features", "feature-request"]
+    },
+    {
+      "id": 13,
+      "category": "FAQ",
+      "question": "Is bold text translated as bold text?",
+      "answer": "Yes, it is reflected (though some languages might not preserve bold formatting).",
+      "article_slug": "bold-text",
+      "tags": ["formatting", "bold-text", "translation"]
+    },
+    {
+      "id": 14,
+      "category": "FAQ",
+      "question": "The translation is wrong. What should I do?",
+      "answer": "Currently translation accuracy is 90%. We are working to improve special terms and nuances. Please report significant mistranslation issues through our Contact Form or at hello@kiara.team.",
+      "article_slug": "wrong-translation",
+      "tags": ["accuracy", "troubleshooting", "translation-quality"]
+    },
+    {
+      "id": 15,
+      "category": "FAQ",
+      "question": "What happens if a sentence contains more than one language?",
+      "answer": "The most appropriate language will be detected and reflected into the translated result.",
+      "article_slug": "sentence",
+      "tags": ["multilingual", "language-detection", "translation"]
+    },
+    {
+      "id": 16,
+      "category": "FAQ",
+      "question": "Kiara doesn't work. What should I check?",
+      "answer": "If Kiara doesn't react after inviting to a channel: 1) Check user count in your Slack workspace (#general channel), 2) Change the user count at Kiara's dashboard to match.",
+      "article_slug": "kiara-doesnt-work",
+      "tags": ["troubleshooting", "not-working", "user-count"]
+    },
+    {
+      "id": 17,
+      "category": "FAQ",
+      "question": "Can I correct the translated result?",
+      "answer": "No. You cannot correct the translated result even if the translation was wrong. This is due to the limitation of Slack App. We hope Slack will change this in the future.",
+      "article_slug": "correct-translation",
+      "tags": ["editing", "limitation", "slack"]
+    },
+    {
+      "id": 18,
+      "category": "FAQ",
+      "question": "Is there a limit on message length?",
+      "answer": "Yes. Maximum length is 5000 characters for a message.",
+      "article_slug": "message-length",
+      "tags": ["limits", "message-length", "constraints"]
+    },
+    {
+      "id": 19,
+      "category": "FAQ",
+      "question": "I cannot find Kiara after I install. What's wrong?",
+      "answer": "You might have registered the wrong number of users. If the actual number in your Slack workspace differs from the number registered with Kiara, it may not work. Check user count in #general channel and change it at Kiara's dashboard.",
+      "article_slug": "cannot-find-kiara",
+      "tags": ["troubleshooting", "installation", "user-count"]
+    },
+    {
+      "id": 20,
+      "category": "FAQ",
+      "question": "Can I use Kiara on my mobile?",
+      "answer": "Yes. You can use Kiara on your mobile inside of Slack mobile app.",
+      "article_slug": "mobile-use",
+      "tags": ["mobile", "compatibility", "slack-mobile"]
+    },
+    {
+      "id": 21,
+      "category": "FAQ",
+      "question": "I cannot invite Kiara to a channel. What should I do?",
+      "answer": "If you cannot invite Kiara at all, or only to #general but not other channels, or get errors: Say '@kiara' in the message box to invite Kiara to the channel.",
+      "article_slug": "cannot-invite-kiara",
+      "tags": ["troubleshooting", "invitation", "channels"]
+    },
+    {
+      "id": 22,
+      "category": "Payment",
+      "question": "Do you offer any discounts?",
+      "answer": "Yes. Please contact us directly via form or at hello@kiara.team",
+      "article_slug": "discounts",
+      "tags": ["pricing", "discounts", "billing"]
+    },
+    {
+      "id": 23,
+      "category": "Payment",
+      "question": "Can I pay by invoice?",
+      "answer": "Yes. We ask you pay annually if you want to pay by invoice. We offer 20% discount for annual advance payment by invoice. For specific period invoicing, contact us via form or hello@kiara.team.",
+      "article_slug": "invoice-payment",
+      "tags": ["payment", "invoice", "billing", "discount"]
+    },
+    {
+      "id": 24,
+      "category": "Payment",
+      "question": "Can I pay annually?",
+      "answer": "Yes. You can pay either by card or invoice. For one-time payment for specific periods, contact us via form or hello@kiara.team.",
+      "article_slug": "annual-payment",
+      "tags": ["payment", "annual", "billing"]
+    },
+    {
+      "id": 25,
+      "category": "Payment",
+      "question": "How do I update my credit card details?",
+      "answer": "From dashboard: 1) Sign in at the top, 2) Authorize and access info, 3) Click 'Plan Setting', 4) Click 'Update Plan Setting', 5) Fill payment form and email, 6) Click 'Update Plan and Payment'.",
+      "article_slug": "update-card",
+      "tags": ["payment", "credit-card", "billing", "update"]
+    },
+    {
+      "id": 26,
+      "category": "Payment",
+      "question": "I installed Kiara but someone else needs to pay. How do I change the payer?",
+      "answer": "From dashboard: 1) Sign in at Kiara's website, 2) Authorize app and access info, 3) Click 'Plan Setting' button to change payer.",
+      "article_slug": "pay-by-others",
+      "tags": ["payment", "payer", "billing", "admin"]
+    },
+    {
+      "id": 27,
+      "category": "Payment",
+      "question": "Can you issue a quotation?",
+      "answer": "Yes. We can issue a quotation. Please ask us via form or at hello@kiara.team",
+      "article_slug": "issue-quotation",
+      "tags": ["quotation", "invoice", "billing"]
+    },
+    {
+      "id": 28,
+      "category": "Cancellation",
+      "question": "How do I delete Kiara?",
+      "answer": "To cancel subscription, please fill in the contact form and we will let you know after the cancellation has been done.",
+      "article_slug": "how-to-delete",
+      "tags": ["cancellation", "deletion", "subscription"]
+    },
+    {
+      "id": 29,
+      "category": "Cancellation",
+      "question": "Are past messages deleted if I cancel my subscription?",
+      "answer": "No. If you cancel your subscription, Kiara will stop the translation but past messages will not be deleted.",
+      "article_slug": "past-messages",
+      "tags": ["cancellation", "data-retention", "messages"]
+    },
+    {
+      "id": 30,
+      "category": "Cancellation",
+      "question": "How can I cancel the subscription?",
+      "answer": "To cancel subscription, please fill in contact form and we will let you know after the cancellation has been done.",
+      "article_slug": "cancel-subscription",
+      "tags": ["cancellation", "subscription", "billing"]
+    },
+    {
+      "id": 31,
+      "category": "Contact",
+      "question": "How can I contact Kiara?",
+      "answer": "Chat via chat box on bottom right, visit our contact form, email hello@kiara.team, or call/text via WhatsApp: +818063062223 or +80 9286 3531",
+      "article_slug": "contact",
+      "tags": ["contact", "support", "help"]
+    }
+  ],
+  "metadata": {
+    "created_date": "2026-01-06",
+    "total_qa_pairs": 31,
+    "categories": ["Quick Start", "How to Use", "FAQ", "Payment", "Cancellation", "Contact"],
+    "languages": ["en"],
+    "notes": "Unified Q&A table for easy querying and search. Japanese translations to be added."
+  }
+}
