@@ -86,34 +86,34 @@ export default function ContactPage() {
         <div className="grid gap-4 md:grid-cols-2">
           <Card className="p-4">
             <h3 className="font-semibold mb-2">Sales Inquiries</h3>
-            <ul className="text-sm text-muted-foreground space-y-1">
-              <li>• Pricing and discounts</li>
-              <li>• Enterprise plans</li>
-              <li>• Quotations and invoicing</li>
+            <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
+              <li>Pricing and discounts</li>
+              <li>Enterprise plans</li>
+              <li>Quotations and invoicing</li>
             </ul>
           </Card>
           <Card className="p-4">
             <h3 className="font-semibold mb-2">Technical Support</h3>
-            <ul className="text-sm text-muted-foreground space-y-1">
-              <li>• Installation issues</li>
-              <li>• Translation problems</li>
-              <li>• Account management</li>
+            <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
+              <li>Installation issues</li>
+              <li>Translation problems</li>
+              <li>Account management</li>
             </ul>
           </Card>
           <Card className="p-4">
             <h3 className="font-semibold mb-2">Billing & Payments</h3>
-            <ul className="text-sm text-muted-foreground space-y-1">
-              <li>• Payment methods</li>
-              <li>• Update billing info</li>
-              <li>• Subscription changes</li>
+            <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
+              <li>Payment methods</li>
+              <li>Update billing info</li>
+              <li>Subscription changes</li>
             </ul>
           </Card>
           <Card className="p-4">
             <h3 className="font-semibold mb-2">Cancellations</h3>
-            <ul className="text-sm text-muted-foreground space-y-1">
-              <li>• Cancel subscription</li>
-              <li>• Delete Kiara</li>
-              <li>• Data retention</li>
+            <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
+              <li>Cancel subscription</li>
+              <li>Delete Kiara</li>
+              <li>Data retention</li>
             </ul>
           </Card>
         </div>

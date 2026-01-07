@@ -247,11 +247,27 @@
       "answer": "Chat via chat box on bottom right, visit our contact form, email hello@kiara.team, or call/text via WhatsApp: +818063062223 or +80 9286 3531",
       "article_slug": "contact",
       "tags": ["contact", "support", "help"]
+    },
+    {
+      "id": 32,
+      "category": "Quick Start",
+      "question": "Quick start guide",
+      "answer": "Before Install: Check how many users are in your Slack workspace beforehand. Ensure the number of people registered with Kiara matches the actual number of people in your Slack workspace. If an error appears after entering credit card information, contact support via chat, contact form, or hello@kiara.team.",
+      "article_slug": "quick-start",
+      "tags": ["installation", "setup", "getting-started", "guide"]
+    },
+    {
+      "id": 33,
+      "category": "How to Use",
+      "question": "How to use DM translation feature?",
+      "answer": "Information about the DM translation feature was not available in the extracted content.",
+      "article_slug": "how-to-use-dm-translation-feature",
+      "tags": ["dm", "direct-message", "translation", "feature"]
     }
   ],
   "metadata": {
     "created_date": "2026-01-06",
-    "total_qa_pairs": 31,
+    "total_qa_pairs": 33,
     "categories": ["Quick Start", "How to Use", "FAQ", "Payment", "Cancellation", "Contact"],
     "languages": ["en"],
     "notes": "Unified Q&A table for easy querying and search. Japanese translations to be added."

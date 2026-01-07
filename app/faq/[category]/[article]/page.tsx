@@ -105,21 +105,26 @@ export default async function ArticlePage({ params }: PageProps) {
       </div>
 
       {/* Article Content */}
-      <Card className="p-8 mb-8">
+      <Card className="p-6 mb-8">
         <div
           className="prose prose-lg max-w-none"
           dangerouslySetInnerHTML={{
             __html: article.content
               // First, handle headings
-              .replace(/^###\s+(.+)$/gm, '<h3 class="text-xl font-semibold mt-6 mb-3">$1</h3>')
-              .replace(/^##\s+(.+)$/gm, '<h3 class="text-xl font-semibold mt-6 mb-3">$1</h3>')
+              .replace(/^###\s+(.+)$/gm, '<h3 class="text-xl font-semibold mt-6 mb-4">$1</h3>')
+              .replace(/^##\s+(.+)$/gm, '<h3 class="text-xl font-semibold mt-6 mb-4">$1</h3>')
+              // Handle special phrases - make them bold and prominent
+              .replace(/^Coming Soon$/gm, '<p class="text-lg font-bold mb-4">Coming Soon</p>')
+              .replace(/^We Are Sorry to See You Go!$/gm, '<p class="text-lg font-bold mb-6">We Are Sorry to See You Go!</p>')
               // Then handle bold text
               .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
               // Handle links
               .replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2" class="text-primary hover:underline">$1</a>')
               // Handle lists (wrap list items and create ul)
               .replace(/^- (.+)$/gm, "<li>$1</li>")
-              .replace(/((?:<li>.*<\/li>\n?)+)/g, "<ul class='list-disc list-inside space-y-2 mb-4'>$1</ul>")
+              .replace(/((?:<li>.*<\/li>\n?)+)/g, "<ul class='list-disc list-inside space-y-1 mb-4'>$1</ul>")
+              // Remove newlines within lists to prevent extra spacing
+              .replace(/<\/li>\n<li>/g, "</li><li>")
               // Finally handle paragraphs and line breaks
               .replace(/\n\n/g, "</p><p class='mb-4'>")
               .replace(/\n/g, "<br />")
@@ -172,15 +177,15 @@ export default async function ArticlePage({ params }: PageProps) {
       {/* Related Articles */}
       <section className="mt-12">
         <h2 className="text-2xl font-semibold mb-6">More from {category.name}</h2>
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="grid gap-3 md:grid-cols-2">
           {category.articles
             .filter((art) => art.slug !== articleSlug)
             .slice(0, 4)
             .map((relatedArticle) => (
               <Link key={relatedArticle.id} href={`/faq/${categorySlug}/${relatedArticle.slug}`}>
-                <Card className="p-4 hover:border-primary transition-colors">
-                  <h3 className="font-semibold mb-2">{relatedArticle.title}</h3>
-                  <p className="text-sm text-muted-foreground line-clamp-2">
+                <Card className="p-3 hover:border-primary transition-colors">
+                  <h3 className="font-semibold text-sm mb-1.5">{relatedArticle.title}</h3>
+                  <p className="text-xs text-muted-foreground line-clamp-2">
                     {relatedArticle.content.replace(/[#*\[\]()]/g, "").substring(0, 100)}...
                   </p>
                 </Card>
@@ -194,12 +199,12 @@ export default async function ArticlePage({ params }: PageProps) {
         <h2 className="text-2xl font-semibold mb-4">Still have questions?</h2>
         <p className="text-muted-foreground mb-6">Our support team is here to help.</p>
         <div className="flex gap-4">
-          <Link href="/contact">
-            <Button>Contact Support</Button>
-          </Link>
-          <Link href="/faq">
-            <Button variant="outline">Browse All FAQ</Button>
-          </Link>
+          <Button asChild>
+            <Link href="/contact">Contact Support</Link>
+          </Button>
+          <Button asChild variant="outline">
+            <Link href="/faq">Browse All FAQ</Link>
+          </Button>
         </div>
       </section>
     </DocsLayout>
