@@ -139,11 +139,11 @@
 }
 
 .prose h2 {
-  @apply text-3xl font-semibold mb-4 mt-12 text-balance;
+  @apply text-3xl font-semibold mb-4 mt-8 text-balance;
 }
 
 .prose h3 {
-  @apply text-xl font-semibold mb-3 mt-8;
+  @apply text-xl font-semibold mb-3 mt-6;
 }
 
 .prose p {
@@ -155,7 +155,7 @@
 }
 
 .prose ul {
-  @apply list-disc pl-6 mb-4 space-y-2;
+  @apply list-disc pl-6 mb-4 space-y-1;
 }
 
 .prose strong {
