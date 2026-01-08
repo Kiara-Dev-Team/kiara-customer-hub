@@ -11,7 +11,7 @@ import { UtilityDropdowns } from "@/components/utility-dropdowns"
 export interface NavItem {
   title: string
   href?: string
-  items?: { title: string; href: string }[]
+  items?: NavItem[]
 }
 
 interface TopNavigationProps {

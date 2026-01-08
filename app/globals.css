@@ -123,10 +123,13 @@
     @apply bg-background text-foreground;
   }
   html {
-    scroll-padding-top: 5rem; /* Account for 64px (h-16) sticky header */
+    scroll-padding-top: 7rem; /* Account for sticky header (h-16 + h-12 = 112px) */
   }
   section {
-    scroll-margin-top: 5rem; /* Account for sticky header */
+    scroll-margin-top: 7rem; /* Account for sticky header (h-16 + h-12 = 112px) */
+  }
+  [id] {
+    scroll-margin-top: 7rem; /* Account for sticky header for all anchor targets */
   }
 }
 
