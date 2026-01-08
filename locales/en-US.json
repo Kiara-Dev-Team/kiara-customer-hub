@@ -1,0 +1,114 @@
+{
+  "hero": {
+    "greeting": "Hello, I'm Dave Ishii"
+  },
+  "about": {
+    "title": "About Me",
+    "intro1": "I'm Dave Ishii — a Fintech and AI entrepreneur with a background in pure mathematics, fashion business, and international market development.",
+    "intro2": "As Founder & CEO of Kiara Inc., I build products that bridge technology and human experience, like the Kiara Translator app for multilingual teams.",
+    "intro3": "Previously at Itochu Corp., I led global fashion brand expansions in Europe and Japan.",
+    "intro4": "Today, I focus on Human-Finance Interaction research, digital identity (eKYC), and innovation at the crossroads of finance, AI, and business strategy.",
+    "intro5": "I share insights regularly through publications, patents, and media, helping organizations navigate transformation with clarity and speed.",
+    "topSkillsTitle": "Top Skills",
+    "languagesTitle": "Languages"
+  },
+  "skills": {
+    "regula": "Regula Face SDK",
+    "vkyc": "vKYC – Video KYC/CIP Solution",
+    "faceRecognition": "Face Recognition"
+  },
+  "languages": {
+    "japanese": "Japanese (Native)",
+    "english": "English (Full Professional)",
+    "italian": "Italian (Professional Working)",
+    "korean": "Korean (Limited Working)",
+    "chinese": "Chinese (Limited Working)",
+    "spanish": "Spanish (Limited Working)"
+  },
+  "navigation": {
+    "about": "About",
+    "experience": "Experience",
+    "publications": "Publications & Patents",
+    "contact": "Contact"
+  },
+  "experience": {
+    "title": "Experience",
+    "kiara": {
+      "title": "Founder & CEO",
+      "company": "Kiara Inc.",
+      "period": "August 2011 — Present",
+      "description": "Kiara Translator is a real-time multilingual translation app designed for Slack, enabling seamless communication across language barriers within teams. It supports over 100 languages and integrates directly into Slack, automatically translating messages to enhance productivity and inclusivity.",
+      "featuresTitle": "Key Features and Strengths",
+      "feature1": "Real-Time Translation: Messages are translated instantly within Slack, facilitating smooth conversations among team members who speak different languages.",
+      "feature2": "Broad Language Support: Kiara supports over 100 languages, making it suitable for diverse, global teams.",
+      "feature3": "User-Friendly Integration: As a Slack plugin, Kiara offers a straightforward setup with no hidden fees, allowing teams to start using it immediately without complex configurations.",
+      "feature4": "Affordable Pricing: Kiara provides various pricing plans to accommodate different team sizes, starting at $30 per month for up to 10 users.",
+      "impactTitle": "Impact",
+      "impact": "Proven Effectiveness: Kiara has been utilized in significant projects, such as supporting 2,000 social innovators at MIT's global hackathon by translating Spanish and Portuguese, demonstrating its reliability in high-stakes environments.",
+      "navOverview": "Overview",
+      "navFeatures": "Key Features",
+      "navImpact": "Impact"
+    },
+    "liquid": {
+      "title": "International Sales Director",
+      "company": "Liquid Inc.",
+      "period": "November 2024 — October 2025",
+      "description": "Liquid eKYC is a fully digital process that businesses use to verify a customer's identity online, without needing physical paperwork.",
+      "ekycTitle": "eKYC Technology Strengths",
+      "ekyc1": "Fast and Easy: Customers can get verified quickly—usually within minutes, instead of days.",
+      "ekyc2": "Lower Costs: Businesses save money because they don't have to handle paper documents or manual checking.",
+      "ekyc3": "More Secure: It uses smart technology like face scans or AI to accurately confirm identities and reduce fraud.",
+      "navOverview": "Overview",
+      "navEkyc": "eKYC Technology"
+    },
+    "cuusoo": {
+      "title": "Product Innovation Director",
+      "company": "CUUSOO SYSTEM",
+      "period": "October 2009 — April 2010",
+      "description": "Spearheaded the revolutionary Cuusoo System, redefining innovation and community engagement in consumer electronics. Collaborated with TEPCO to develop cutting-edge home appliances inspired by user creativity, bridging the gap between ideas and market needs.",
+      "badge1": "Product Innovation",
+      "badge2": "Community Engagement",
+      "badge3": "Strategic Partnerships",
+      "badge4": "Consumer Electronics",
+      "navOverview": "Overview"
+    },
+    "itochu": {
+      "title": "Sales Representative",
+      "company": "ITOCHU Corporation",
+      "period": "April 1998 — June 2009",
+      "point1": "Developed strategic business initiatives and international market expansion for renowned global fashion brands, including Paul Smith (UK), Replay Jeans, Patrizia Pepe, Freddy, Richard Ginori (Italy), Essential (Belgium), and J.Lindeberg (Sweden).",
+      "point2": "Successfully led cross-cultural projects and partnerships, working as an expatriate in the UK and Italy, driving brand growth and enhancing market presence across European markets.",
+      "navOverview": "Overview"
+    }
+  },
+  "publications": {
+    "title": "Publications & Patents",
+    "book1Title": "機械学習エンジニアになりたい人のための本 AIを天職にする",
+    "book1Subtitle": "(Book for Those Who Want to Become Machine Learning Engineers)",
+    "book1Description": "Publication on AI and machine learning engineering career development.",
+    "book2Title": "働き方のデジタルシフト : リモートワークからはじめる、しなやかな組織づくりの処方箋",
+    "book2Subtitle": "(Digital Shift in Work Styles: A Prescription for Creating Flexible Organizations Starting with Remote Work)",
+    "book2Description": "Exploring the future of work and organizational transformation through remote work practices.",
+    "book3Title": "コロナ vs. AI 最新テクノロジーで感染症に挑む",
+    "book3Subtitle": "(Corona vs. AI: Challenging Infectious Diseases with Latest Technology)",
+    "book3Description": "Analysis of how AI and technology can be leveraged to combat infectious diseases.",
+    "book4Title": "機械学習エンジニアになりたい人のための本",
+    "book4Subtitle": "(Book for Those Who Want to Become Machine Learning Engineers)",
+    "book4Description": "Comprehensive guide for aspiring machine learning engineers.",
+    "patentTitle": "サービス提供者が提供するサービスを評価するための装置、その装置において実行される方法、プログラム",
+    "patentSubtitle": "(Patent: Device for Evaluating Services Provided by Service Providers, Method and Program)",
+    "patentDescription": "Patented system for evaluating services, including device architecture, methods, and program implementation for improving service quality assessment."
+  },
+  "contact": {
+    "title": "Let's Connect",
+    "description": "I'm always interested in discussing new opportunities, collaborations, and innovative projects at the intersection of fintech, AI, and business strategy. Feel free to reach out!",
+    "emailButton": "Send me an email",
+    "linkedinButton": "Connect on LinkedIn",
+    "email": "Email",
+    "mobile": "Mobile",
+    "location": "Location",
+    "locationValue": "Shibuya-ku, Tokyo, Japan",
+    "website": "Website",
+    "portfolio": "Portfolio"
+  }
+}

@@ -3,6 +3,7 @@
 import * as React from "react"
 import Link from "next/link"
 import { ChevronLeft, ChevronDown, ChevronRight } from "lucide-react"
+import { useTranslate } from "@tolgee/react"
 import { TopNavigation, type NavItem } from "@/components/top-navigation"
 import { LanguageSelector } from "@/components/language-selector"
 import { cn } from "@/lib/utils"
@@ -13,6 +14,7 @@ interface DocsLayoutProps {
 }
 
 function SidebarNavItem({ item, level = 0, currentHash }: { item: NavItem; level?: number; currentHash: string }) {
+  const { t } = useTranslate()
   const [isOpen, setIsOpen] = React.useState(true)
   const hasChildren = item.items && item.items.length > 0
 
@@ -51,7 +53,7 @@ function SidebarNavItem({ item, level = 0, currentHash }: { item: NavItem; level
             !isActive && "text-slate-600 dark:text-slate-300 hover:text-[#635bff] hover:bg-slate-50 dark:hover:bg-slate-800"
           )}
         >
-          {item.title}
+          {t(item.title)}
         </a>
       ) : (
         <button
@@ -71,7 +73,7 @@ function SidebarNavItem({ item, level = 0, currentHash }: { item: NavItem; level
             "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800"
           )}
         >
-          <span>{item.title}</span>
+          <span>{t(item.title)}</span>
           {hasChildren && (
             <span className="ml-auto">
               {isOpen ? (
@@ -109,7 +111,7 @@ export function DocsLayout({ navigation, children }: DocsLayoutProps) {
       // Check if hash belongs to Experience section
       const experienceHashes = ["#kiara", "#kiara-features", "#kiara-impact", "#liquid", "#liquid-ekyc", "#cuusoo", "#itochu"]
       if (experienceHashes.includes(hash)) {
-        setActiveSection("Experience")
+        setActiveSection("navigation.experience")
       } else {
         setActiveSection("")
       }

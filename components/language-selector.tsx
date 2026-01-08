@@ -2,6 +2,7 @@
 
 import * as React from "react"
 import { Globe, Check } from "lucide-react"
+import { useTolgee } from "@tolgee/react"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,20 +17,11 @@ const languages = [
 ]
 
 export function LanguageSelector() {
-  const [selectedLanguage, setSelectedLanguage] = React.useState("en-US")
-
-  // Load saved language from localStorage on mount
-  React.useEffect(() => {
-    const saved = localStorage.getItem("preferred-language")
-    if (saved) {
-      setSelectedLanguage(saved)
-    }
-  }, [])
+  const tolgee = useTolgee(["language"])
+  const selectedLanguage = tolgee.getLanguage()
 
   const handleLanguageChange = (code: string) => {
-    setSelectedLanguage(code)
-    localStorage.setItem("preferred-language", code)
-    // Here you would typically trigger i18n language change
+    tolgee.changeLanguage(code)
   }
 
   const currentLanguage = languages.find((lang) => lang.code === selectedLanguage)

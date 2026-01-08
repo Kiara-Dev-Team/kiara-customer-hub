@@ -4,6 +4,7 @@ import * as React from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
+import { useTranslate } from "@tolgee/react"
 import { SearchDialog } from "@/components/search-dialog"
 import { AskAiButton } from "@/components/ask-ai-button"
 import { UtilityDropdowns } from "@/components/utility-dropdowns"
@@ -21,6 +22,7 @@ interface TopNavigationProps {
 }
 
 export function TopNavigation({ navigation, activeSection, onSectionChange }: TopNavigationProps) {
+  const { t } = useTranslate()
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
   const [currentHash, setCurrentHash] = React.useState("")
 
@@ -134,7 +136,7 @@ export function TopNavigation({ navigation, activeSection, onSectionChange }: To
                           : "text-slate-600 dark:text-slate-300 border-transparent hover:text-slate-900 dark:hover:text-slate-100"
                       )}
                     >
-                      {item.title}
+                      {t(item.title)}
                     </Link>
                   ) : (
                     <button
@@ -146,7 +148,7 @@ export function TopNavigation({ navigation, activeSection, onSectionChange }: To
                           : "text-slate-600 dark:text-slate-300 border-transparent hover:text-slate-900 dark:hover:text-slate-100"
                       )}
                     >
-                      {item.title}
+                      {t(item.title)}
                     </button>
                   )}
                 </div>
@@ -173,7 +175,7 @@ export function TopNavigation({ navigation, activeSection, onSectionChange }: To
                 }}
                 className="block px-4 py-2 text-sm font-medium rounded-md hover:bg-accent transition-colors"
               >
-                {item.title}
+                {t(item.title)}
               </Link>
             ))}
           </div>
