@@ -13,8 +13,9 @@ interface DocsLayoutProps {
 }
 
 function SidebarNavItem({ item, level = 0, currentHash }: { item: NavItem; level?: number; currentHash: string }) {
-  const [isOpen, setIsOpen] = React.useState(true)
+  const [isOpen, setIsOpen] = React.useState(false)
   const hasChildren = item.items && item.items.length > 0
+  const contentId = React.useId()
 
   // Check if this item or any of its children (recursively) are active
   const isActive = item.href === currentHash
@@ -27,12 +28,22 @@ function SidebarNavItem({ item, level = 0, currentHash }: { item: NavItem; level
   }
   const hasActiveChild = hasChildren && item.items ? checkActiveChild(item.items) : false
 
-  // Debug logging
-  if (level === 0) {
-    console.log(`${item.title}: hasActiveChild=${hasActiveChild}, currentHash=${currentHash}`)
-  }
-  if (item.href) {
-    console.log(`  ${item.title} (${item.href}): isActive=${isActive}`)
+  // Auto-expand if this item or its children are active
+  React.useEffect(() => {
+    if (hasActiveChild || isActive) {
+      setIsOpen(true)
+    }
+  }, [hasActiveChild, isActive])
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault()
+      setIsOpen(!isOpen)
+      // Navigate to first child if exists
+      if (item.items && item.items.length > 0 && item.items[0].href) {
+        window.location.hash = item.items[0].href
+      }
+    }
   }
 
   return (
@@ -41,7 +52,7 @@ function SidebarNavItem({ item, level = 0, currentHash }: { item: NavItem; level
         <a
           href={item.href}
           className={cn(
-            "block px-3 py-2 text-sm rounded-md transition-colors",
+            "block px-3 py-2 text-sm rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-[#635bff] focus:ring-offset-2",
             level > 0 && "ml-4",
             // Level 0 (companies): bold when active or has active child
             level === 0 && (isActive || hasActiveChild) && "font-semibold",
@@ -62,8 +73,11 @@ function SidebarNavItem({ item, level = 0, currentHash }: { item: NavItem; level
               window.location.hash = item.items[0].href
             }
           }}
+          onKeyDown={handleKeyDown}
+          aria-expanded={hasChildren ? isOpen : undefined}
+          aria-controls={hasChildren ? contentId : undefined}
           className={cn(
-            "flex w-full items-center justify-between px-3 py-2 text-sm rounded-md transition-colors",
+            "flex w-full items-center justify-between px-3 py-2 text-sm rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-[#635bff] focus:ring-offset-2",
             level > 0 && "ml-4",
             // Level 0 (companies): bold when has active child
             level === 0 && hasActiveChild && "font-semibold",
@@ -73,7 +87,7 @@ function SidebarNavItem({ item, level = 0, currentHash }: { item: NavItem; level
         >
           <span>{item.title}</span>
           {hasChildren && (
-            <span className="ml-auto">
+            <span className="ml-auto" aria-hidden="true">
               {isOpen ? (
                 <ChevronDown className="h-4 w-4" />
               ) : (
@@ -84,7 +98,7 @@ function SidebarNavItem({ item, level = 0, currentHash }: { item: NavItem; level
         </button>
       )}
       {hasChildren && isOpen && (
-        <div className="mt-1 space-y-1">
+        <div id={contentId} className="mt-1 space-y-1">
           {item.items?.map((child, index) => (
             <SidebarNavItem key={index} item={child} level={level + 1} currentHash={currentHash} />
           ))}
@@ -103,7 +117,6 @@ export function DocsLayout({ navigation, children }: DocsLayoutProps) {
   React.useEffect(() => {
     const updateHash = () => {
       const hash = window.location.hash || "#about"
-      console.log("Hash changed to:", hash)
       setCurrentHash(hash)
 
       // Check if hash belongs to Experience section
