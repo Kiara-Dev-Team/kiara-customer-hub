@@ -1,7 +1,9 @@
 "use client"
 
 import * as React from "react"
+import Link from "next/link"
 import { ChevronDown } from "lucide-react"
+import { T } from "@tolgee/react"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,23 +18,23 @@ export function UtilityDropdowns() {
       {/* APIs & SDKs Dropdown */}
       <DropdownMenu>
         <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100 transition-colors outline-none">
-          APIs & SDKs
+          <T keyName="helpDropdown.apisSDKs" />
           <ChevronDown className="h-4 w-4" />
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-48">
           <DropdownMenuItem asChild>
             <a href="#" className="cursor-pointer">
-              API Reference
+              <T keyName="helpDropdown.apiReference" />
             </a>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
             <a href="#" className="cursor-pointer">
-              Documentation
+              <T keyName="helpDropdown.documentation" />
             </a>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
             <a href="#" className="cursor-pointer">
-              Libraries & SDKs
+              <T keyName="helpDropdown.librariesSDKs" />
             </a>
           </DropdownMenuItem>
         </DropdownMenuContent>
@@ -41,38 +43,38 @@ export function UtilityDropdowns() {
       {/* Help Dropdown */}
       <DropdownMenu>
         <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100 transition-colors outline-none">
-          Help
+          <T keyName="helpDropdown.help" />
           <ChevronDown className="h-4 w-4" />
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-48">
           <DropdownMenuItem asChild>
-            <a href="/faq" className="cursor-pointer">
-              FAQ
-            </a>
+            <Link href="/faq" className="cursor-pointer">
+              <T keyName="helpNav.faq" />
+            </Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
-            <a href="/quick" className="cursor-pointer">
-              Quick Links
-            </a>
+            <Link href="/quick" className="cursor-pointer">
+              <T keyName="helpNav.quickLinks" />
+            </Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
-            <a href="/service-level" className="cursor-pointer">
-              Service Level
-            </a>
+            <Link href="/service-level" className="cursor-pointer">
+              <T keyName="helpNav.serviceLevel" />
+            </Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
-            <a href="/roadmap" className="cursor-pointer">
-              Roadmap
-            </a>
+            <Link href="/roadmap" className="cursor-pointer">
+              <T keyName="helpNav.roadmap" />
+            </Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
-            <a href="/contact" className="cursor-pointer">
-              Contact Support
-            </a>
+            <Link href="/contact" className="cursor-pointer">
+              <T keyName="helpDropdown.contactSupport" />
+            </Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
             <a href="https://www.getkiara.com/contact" target="_blank" rel="noopener noreferrer" className="cursor-pointer">
-              Contact sales
+              <T keyName="helpDropdown.contactSales" />
             </a>
           </DropdownMenuItem>
         </DropdownMenuContent>

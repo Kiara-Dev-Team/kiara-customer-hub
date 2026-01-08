@@ -2,6 +2,7 @@
 
 import * as React from "react"
 import { FileText, Briefcase, BookOpen, Mail, User } from "lucide-react"
+import { useTranslate } from "@tolgee/react"
 import {
   CommandDialog,
   CommandEmpty,
@@ -21,6 +22,7 @@ interface SearchResult {
 }
 
 export function SearchDialog() {
+  const { t } = useTranslate()
   const [open, setOpen] = React.useState(false)
 
   React.useEffect(() => {
@@ -185,7 +187,7 @@ export function SearchDialog() {
         onClick={() => setOpen(true)}
         className="hidden md:flex items-center gap-2 px-3 py-1.5 text-sm text-slate-500 bg-slate-50 dark:bg-slate-800 dark:text-slate-400 border border-slate-200 dark:border-slate-700 rounded-md hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors max-w-xs"
       >
-        <span className="text-slate-400">Search</span>
+        <span className="text-slate-400">{t('search.placeholder')}</span>
         <kbd className="ml-auto pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
           <span className="text-xs">⌘</span>K
         </kbd>

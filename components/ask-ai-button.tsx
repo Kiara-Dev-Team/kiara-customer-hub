@@ -2,6 +2,7 @@
 
 import * as React from "react"
 import { Sparkles } from "lucide-react"
+import { useTranslate } from "@tolgee/react"
 import {
   Dialog,
   DialogContent,
@@ -12,6 +13,7 @@ import {
 import { Button } from "@/components/ui/button"
 
 export function AskAiButton() {
+  const { t } = useTranslate()
   const [open, setOpen] = React.useState(false)
 
   return (
@@ -23,7 +25,7 @@ export function AskAiButton() {
         className="hidden md:flex items-center gap-2 border-[#635bff] text-[#635bff] hover:bg-[#635bff] hover:text-white transition-colors"
       >
         <Sparkles className="h-4 w-4" />
-        <span className="text-sm font-medium">Ask AI</span>
+        <span className="text-sm font-medium">{t('search.button')}</span>
       </Button>
 
       {/* Mobile Button - Icon Only */}
@@ -34,7 +36,7 @@ export function AskAiButton() {
         className="md:hidden border-[#635bff] text-[#635bff] hover:bg-[#635bff] hover:text-white transition-colors"
       >
         <Sparkles className="h-4 w-4" />
-        <span className="sr-only">Ask AI</span>
+        <span className="sr-only">{t('search.button')}</span>
       </Button>
 
       {/* Coming Soon Dialog */}
@@ -43,21 +45,20 @@ export function AskAiButton() {
           <DialogHeader>
             <DialogTitle className="flex items-center gap-2 text-[#635bff]">
               <Sparkles className="h-5 w-5" />
-              Ask AI - Coming Soon
+              {t('search.dialogTitle')}
             </DialogTitle>
             <DialogDescription className="pt-4 space-y-3 text-base">
               <p>
-                We're building an AI assistant to help you navigate and understand Dave's experience,
-                publications, and expertise.
+                {t('search.dialogDescription1')}
               </p>
               <p className="text-sm text-muted-foreground">
-                Stay tuned for this exciting feature!
+                {t('search.dialogDescription2')}
               </p>
             </DialogDescription>
           </DialogHeader>
           <div className="flex justify-end mt-4">
             <Button onClick={() => setOpen(false)} className="bg-[#635bff] hover:bg-[#5148e5]">
-              Got it
+              {t('search.gotIt')}
             </Button>
           </div>
         </DialogContent>

@@ -110,5 +110,409 @@
     "locationValue": "Shibuya-ku, Tokyo, Japan",
     "website": "Website",
     "portfolio": "Portfolio"
+  },
+  "helpNav": {
+    "home": "Home",
+    "faq": "FAQ",
+    "quickLinks": "Quick Links",
+    "serviceLevel": "Service Level",
+    "roadmap": "Roadmap",
+    "contact": "Contact"
+  },
+  "helpDropdown": {
+    "help": "Help",
+    "apisSDKs": "APIs & SDKs",
+    "apiReference": "API Reference",
+    "documentation": "Documentation",
+    "librariesSDKs": "Libraries & SDKs",
+    "support": "Support",
+    "contactSales": "Contact sales",
+    "emailUs": "Email Us",
+    "contactSupport": "Contact Support"
+  },
+  "quick": {
+    "title": "Quick Links",
+    "description": "Access frequently used resources and documentation quickly.",
+    "gettingStartedTitle": "Getting Started",
+    "gettingStartedDesc": "New to Kiara? Start here to learn the basics and get up and running quickly.",
+    "gettingStartedLink": "View Quick Start Guide →",
+    "installationTitle": "Installation",
+    "installationDesc": "Step-by-step guide to installing Kiara in your Slack workspace.",
+    "installationLink": "View Installation Guide →",
+    "pricingTitle": "Pricing",
+    "pricingDesc": "Learn about our pricing plans and payment options.",
+    "pricingLink": "View Pricing Info →",
+    "supportTitle": "Support",
+    "supportDesc": "Get help from our support team or browse our FAQ.",
+    "supportLink": "Contact Support →",
+    "roadmapTitle": "Roadmap",
+    "roadmapDesc": "See what we're working on and what's coming next.",
+    "roadmapLink": "View Roadmap →",
+    "serviceLevelTitle": "Service Level",
+    "serviceLevelDesc": "Learn about our service level agreements and commitments.",
+    "serviceLevelLink": "View SLA →"
+  },
+  "faqPage": {
+    "title": "Help & FAQ",
+    "description": "Find answers to common questions about Kiara Translator. Browse by category or search for specific topics.",
+    "articles": "articles",
+    "readMore": "Read more →",
+    "stillHaveQuestions": "Still have questions?",
+    "cantFindAnswer": "Can't find what you're looking for? Get in touch with our support team.",
+    "contactSupportBtn": "Contact Support",
+    "emailUsBtn": "Email Us",
+    "categoryQuickStart": "Quick Start",
+    "categoryQuickStartDesc": "Installation and setup guides",
+    "categoryHowToUse": "How to Use",
+    "categoryHowToUseDesc": "Feature usage instructions",
+    "categoryFAQ": "FAQ",
+    "categoryFAQDesc": "Frequently asked questions",
+    "categoryPayment": "Payment",
+    "categoryPaymentDesc": "Billing and payment information",
+    "categoryCancellation": "Cancellation",
+    "categoryCancellationDesc": "Account cancellation and data retention",
+    "categoryContact": "Contact",
+    "categoryContactDesc": "How to reach our support team"
+  },
+  "roadmapPage": {
+    "title": "Product Roadmap",
+    "description": "See what we're working on and what's coming next for Kiara Translator.",
+    "viewTrelloLink": "View detailed roadmap on Trello →",
+    "plannedFeatures": "Planned Features",
+    "statusPlanned": "Planned",
+    "statusInProgress": "In Progress",
+    "feature1Title": "Translation Memory & Glossary",
+    "feature1Desc": "Add support for translation memory and custom glossaries to improve consistency and allow customization for domain-specific terminology.",
+    "feature1Note": "Requested by multiple customers. We'll implement this when ready.",
+    "feature2Title": "Single Language Display",
+    "feature2Desc": "Allow users to configure settings so only one language translation is shown, reducing visual clutter when multiple languages are active in a channel.",
+    "feature2Note": "Based on customer feedback. Implementation in progress.",
+    "feature3Title": "Custom Translation Input",
+    "feature3Desc": "Enable users to add their own custom translations through Kiara, allowing for personalized and context-specific translations.",
+    "feature3Note": "Multiple customer requests received. Feature in planning phase.",
+    "feature4Title": "Enhanced Translation Accuracy",
+    "feature4Desc": "Continuous improvements to translation quality, especially for special terms, nuances, and domain-specific language. Current accuracy: ~90%.",
+    "feature4Note": "Ongoing development and optimization.",
+    "featureRequestTitle": "Have a Feature Request?",
+    "featureRequestDesc": "We value your feedback! Let us know what features you'd like to see in Kiara Translator.",
+    "featureRequestBtn": "Submit Feature Request"
+  },
+  "serviceLevelPage": {
+    "title": "Service Level Agreement",
+    "description": "Our commitment to providing reliable and high-quality translation services.",
+    "lastUpdated": "Last Updated: January 2026",
+    "supportSLOTitle": "Customer Support Service Level Objectives (SLO)",
+    "supportSLODesc": "We are committed to providing excellent customer support with clearly defined response and resolution times.",
+    "firstResponseTitle": "First Response Time",
+    "firstResponseDesc": "Initial response to customer inquiries",
+    "firstResponseTarget": "95% within 1 business day",
+    "criticalIssueTitle": "Critical Issue Acknowledgment",
+    "criticalIssueDesc": "Urgent technical issues and outages",
+    "criticalIssueTarget": "100% within 4 business hours",
+    "resolutionTimeTitle": "Resolution Time",
+    "resolutionTimeDesc": "Complete resolution of support cases",
+    "resolutionTimeTarget": "90% within 2 business days",
+    "ongoingUpdatesTitle": "Ongoing Case Updates",
+    "ongoingUpdatesDesc": "Regular status updates for open tickets",
+    "ongoingUpdatesTarget": "100% every 7 business days",
+    "slaComplianceTitle": "SLA Compliance",
+    "slaComplianceDesc": "Overall adherence to service level targets",
+    "slaComplianceTarget": "≥90% across all targets",
+    "satisfactionTitle": "Customer Satisfaction",
+    "satisfactionDesc": "Target satisfaction rating from support interactions",
+    "satisfactionTarget": "≥4.5/5 rating",
+    "availabilityTitle": "Service Availability",
+    "uptimeTitle": "Uptime Guarantee",
+    "uptimeDesc": "We strive to maintain 99.9% uptime for our translation services. Any scheduled maintenance will be announced in advance.",
+    "accuracyTitle": "Translation Accuracy",
+    "accuracyDesc": "Our current translation accuracy is approximately 90%. We continuously improve our algorithms to enhance translation quality, especially for special terms and nuanced language.",
+    "featuresTitle": "Supported Features",
+    "feature1": "Real-time translation in 100+ languages",
+    "feature2": "Unlimited character translation (as of Jan 2021)",
+    "feature3": "Message length up to 5000 characters",
+    "feature4": "Mobile app support via Slack mobile",
+    "feature5": "Channel and direct message translation",
+    "feature6": "Multi-language detection"
+  },
+  "contactPage": {
+    "title": "Contact Us",
+    "description": "Get in touch with our team. We're here to help with any questions or issues you may have.",
+    "emailTitle": "Email",
+    "emailDesc": "Send us an email and we'll get back to you within 24 hours.",
+    "emailAddress": "hello@kiara.team",
+    "contactFormTitle": "Contact Form",
+    "contactFormDesc": "Fill out our contact form for detailed inquiries or support requests.",
+    "contactFormBtn": "Open Contact Form",
+    "phoneTitle": "Phone / WhatsApp",
+    "phoneDesc": "Call or text us for immediate assistance.",
+    "liveChatTitle": "Live Chat",
+    "liveChatDesc": "Use the chat box on the bottom right of the screen for instant support.",
+    "liveChatHours": "Available during business hours",
+    "reasonsTitle": "Common Reasons to Contact Us",
+    "salesTitle": "Sales Inquiries",
+    "salesItem1": "Pricing and discounts",
+    "salesItem2": "Enterprise plans",
+    "salesItem3": "Quotations and invoicing",
+    "technicalTitle": "Technical Support",
+    "technicalItem1": "Installation issues",
+    "technicalItem2": "Translation problems",
+    "technicalItem3": "Account management",
+    "billingTitle": "Billing & Payments",
+    "billingItem1": "Payment methods",
+    "billingItem2": "Update billing info",
+    "billingItem3": "Subscription changes",
+    "cancellationTitle": "Cancellations",
+    "cancellationItem1": "Cancel subscription",
+    "cancellationItem2": "Delete Kiara",
+    "cancellationItem3": "Data retention",
+    "beforeContactTitle": "Before You Contact Us",
+    "beforeContactDesc": "Check our FAQ section - you might find your answer there!",
+    "browseFAQBtn": "Browse FAQ"
+  },
+  "faqArticles": {
+    "add-translation": {
+      "title": "Can I add my original translation via Kiara?",
+      "content": "No. We cannot provide this feature at the moment. Since some customers asked us, we will try to implement this when we are ready.",
+      "category": "faq"
+    },
+    "annual-payment": {
+      "title": "Can I pay annually?",
+      "content": "Yes. You can pay either by card or invoice.\n\nIf you want to make a one-time payment for a specific period such as until the project ends, please contact us with [form](https://www.getkiara.com/contact) or at hello@kiara.team.",
+      "category": "payment"
+    },
+    "api-workflow-integration": {
+      "title": "Can we use Kiara as API and connect with Slack Workflow?",
+      "content": "Sorry. Currently we do not sell translation API.\n\nIf you are interested in API access for integration with Slack Workflow or other systems, please contact us at hello@kiara.team to discuss your requirements.",
+      "category": "faq"
+    },
+    "before-install": {
+      "title": "What should I check before installing Kiara?",
+      "content": "You need to input the correct number of users in your Slack workspace. If the user number is incorrect, \"Kiara might not work\".\n\n**Important Note**: If the actual number of people in your slack workspace is different from the number of people registered with Kiara, Kiara Translator may not work.\n\n**Additional Information**:\n- Previously, only one person was allowed to access the dashboard after sign-up\n- As of August 5th, multiple people can now access the dashboard",
+      "category": "quick-start"
+    },
+    "bold-text": {
+      "title": "Is bold text translated as bold text?",
+      "content": "Yes, it is reflected (though some languages might not preserve bold formatting).",
+      "category": "faq"
+    },
+    "cancel-subscription": {
+      "title": "How can I cancel the subscription?",
+      "content": "We Are Sorry to See You Go!\n\nTo cancel subscription, please fill in [contact form](https://www.getkiara.com/contact) and will let you know after the cancellation has been done.",
+      "category": "cancellation"
+    },
+    "cannot-find-kiara": {
+      "title": "I cannot find Kiara after I install. What's wrong?",
+      "content": "If you cannot find Kiara after installation in your Slack workspace, you might have registered the wrong number of users in Kiara. If the actual number of people in your Slack workspace differs from the number registered with Kiara, the Kiara Translator may not work.\n\n**Steps:**\n1) Check how many users you have in your Slack workspace\n   - See the user count on the #general channel\n\n2) Change the user count at Kiara's dashboard",
+      "category": "faq"
+    },
+    "cannot-invite-kiara": {
+      "title": "I cannot invite Kiara to a channel. What should I do?",
+      "content": "If you are in below situation, please try this way to invite Kiara:\n- Cannot invite Kiara to a channel at all\n- You could invite Kiara to #general channel but not for other channels\n- An error occurs when inviting Kiara to a channel\n\n**Solution**: Say \"@kiara\" in the message box to invite Kiara to a channel.",
+      "category": "faq"
+    },
+    "contact": {
+      "title": "How can I contact Kiara?",
+      "content": "You have some ways to reach us:\n\n- Chat by chat box on the bottom right on your screen\n- Visit our [contact form](https://www.getkiara.com/contact)\n- Reach us at hello@kiara.team\n- You can also call or text us from phone/WhatsApp: +818063062223 or +80 9286 3531",
+      "category": "contact"
+    },
+    "correct-translation": {
+      "title": "Can I correct the translated result?",
+      "content": "No. You cannot correct the translated result even if the translation was wrong. This is due to the limitation of Slack App. We hope Slack will change this in the future.",
+      "category": "faq"
+    },
+    "customer-support-slo": {
+      "title": "What is Kiara's Customer Support Service Level Objective (SLO)?",
+      "content": "Kiara Support – Service Level Objectives (SLOs)\n\nMetricObjectiveMeasurement PeriodNotesFirst Response Time (FRT)95% of inquiries receive an initial responsewithin 1 business dayMonthlyApplies to all standard (non-urgent) casesCritical Issue Acknowledgment100% of critical incidents are acknowledgedwithin 4 business hoursMonthlyIncludes outages, billing errors, or security issuesResolution Time (TTR)90% of standard cases resolved or updatedwithin 2 business daysMonthly“Resolution” includes full answer or next-step planStatus Update for Long-Running Cases100% of ongoing cases updated at leastevery 7 business daysMonthlyEnsures visibility on pending or waiting itemsSLA Compliance RateMaintain≥ 90% complianceacross all SLA targetsQuarterlyCalculated from case logs and internal auditsCustomer Satisfaction (CSAT)Achieve≥ 4.5 / 5 average ratingQuarterlyBased on post-case surveys\n\nPlain summary\n\nWe respond within 1 business day, fix or update within 2 business days,and act on urgent issueswithin 4 business hours— with 90%+ consistency\n\nKiara サポート – サービスレベル目標（SLO）\n\n指標目標値測定期間備考初回応答時間（FRT）95％の問い合わせに対して、1営業日以内に初回返信月次通常案件に適用重大インシデントの受付100％の緊急案件を4営業時間以内に受付・対応開始月次障害、誤請求、セキュリティ関連を含む解決時間（TTR）90％の通常案件を2営業日以内に解決または進捗報告月次「解決」には回答または次の対応提示を含む長期案件の更新頻度100％の継続案件を7営業日以内に進捗更新月次顧客確認待ち・長期対応の可視化SLA遵守率全体で90％以上を維持四半期ログおよび内部監査に基づき算出顧客満足度（CSAT）平均4.5 / 5以上を維持四半期対応完了後の顧客アンケート結果に基づく\n\nKiaraは、1営業日以内に返信し、2営業日以内に回答または進捗を報告します。緊急案件については4時間以内に対応を開始し、全体の90％以上を目標に安定したサポートを提供します。",
+      "category": "service-level"
+    },
+    "data-privacy": {
+      "title": "How do you keep or use customer data?",
+      "content": "Immediate data deletion policy - We protect our important customer's data privacy\n\nSince the data privacy issue is becoming bigger in mass media and social media,\n\nof course we do care our important customer concern.\n\nAs a CEO , I declare\n\nWe do not sell the data\n\nWe do not use the data for the AI training\n\nWe do not look at the data and immediately delete after processing the translation\n\nWe know many negative news are going around in the internet / TV about customer data privacy vs ChatGPT AI training.\n\nAs a mathematician and the founder of Kiara Inc,\n\nmy standpoint is very clear.\n\n\"Our customer is you\" & \"Our customer is not venture capital\"\n\nDave Ishii, CEO Kiara Inc.",
+      "category": "faq"
+    },
+    "delete-add-languages": {
+      "title": "How do I add or delete languages?",
+      "content": "## How to add a language\n\nSay \"@kiara\" in the message box, press \"Add\" button and select a language you want to add.\n\n## How to delete a language\n\nSay \"@kiara\" in the message box, press \"Delete\" button and select a language you want to delete.",
+      "category": "how-to-use"
+    },
+    "discounts": {
+      "title": "Do you offer any discounts?",
+      "content": "Yes. Please contact us directly with [form](https://www.getkiara.com/contact) or at hello@kiara.team",
+      "category": "payment"
+    },
+    "duplicated-translation": {
+      "title": "Sometimes we see duplicated translation",
+      "content": "私たちは「duplicated message（重複メッセージ）」エラーについて、これまで何度か問い合わせを受けており、正直なところ頭を悩ませてきました。\n\nエンタープライズのお客様が大量の翻訳リクエストを同時に発生させたときに、このエラーが発生することがあります。ピークは長く続かないため、通常は数時間で自然に解消されます。\n\nこの問題は、データベース構造に起因する “技術的負債” が一因となっている可能性があります。\n\n私たちは月次の戦略計画の中で、継続的にこの部分の改善とクリーンアップを進めています。\n\n率直に言うと、2024年と比べると2025年はエラー発生が大幅に減っています。\n\n理由はいくつかありますが、その一つとして、同時に大量のリクエストを処理する際、当社システムと Slack API の間にごくわずかなタイムラグが生じ、Slack API が「正しく応答が返ってきていない」と判断して同じリクエストを二重に送ってしまうことでエラーが起きている可能性があります。\n\n同じリクエストを二重に送ってしまうケースの他に、Kiaraからの返信が特定のメッセージだけつかないケースもあるようです。引き続き改善を続けてまいります。\n\nWe get “duplicated message” error inquiry several times - and honestly it has been our headache.(Short answer) Our enterprise customers got it when translation traffic volume is very high. It naturally goes away after few hours because the peak does not last long.(Long answer)This might come from our “technical debt” due to the database structure.We have monthly strategic plan to keep cleaning it regularly.Frankly we see much less errors in 2025 compared with 2024.Among several reasons, we are guessing this error happens when dealing with high volume at the same time, due to the slight time lag in between our system and slack api, slack api might have been calling our system twice by thinking our system is failing to return correct data.",
+      "category": "faq"
+    },
+    "how-to-delete": {
+      "title": "How do I delete Kiara?",
+      "content": "We Are Sorry to See You Go!\n\nTo cancel subscription, please fill in [the contact form](https://www.getkiara.com/contact) and will let you know after the cancellation has been done.",
+      "category": "cancellation"
+    },
+    "how-to-use-dm-translation-feature": {
+      "title": "How to use DM translation feature?",
+      "content": "Information about the DM translation feature was not available in the extracted content.",
+      "category": "how-to-use"
+    },
+    "install-after-payment": {
+      "title": "How to install Kiara Translator after payment",
+      "content": "Coming Soon\n\nDetailed instructions for installing Kiara Translator after completing payment will be available soon. For assistance, please contact us at hello@kiara.team",
+      "category": "quick-start"
+    },
+    "install-kiara": {
+      "title": "How do I install Kiara?",
+      "content": "## Installation Steps\n\nTo install Kiara to your Slack workspace, you will need to:\n1. Access the Kiara website\n2. Click \"Try create it free for 14 days\" button on the top page\n3. Follow the on-screen instructions",
+      "category": "quick-start"
+    },
+    "invite-kiara": {
+      "title": "How do I invite Kiara to a channel?",
+      "content": "To invite Kiara to a channel, simply \"Say '@kiara' in the message box to invite Kiara to a channel.\"",
+      "category": "how-to-use"
+    },
+    "invoice-payment": {
+      "title": "Can I pay by invoice?",
+      "content": "Yes. Basically we ask you pay annually if you want to pay by invoice. We offer you 20% discount for an annual advance payment by invoice. Get 20% off with an annual payment!\n\nIf you want to pay by invoice for a specific period such as until the project ends, please contact us with [form](https://www.getkiara.com/contact) or at hello@kiara.team.",
+      "category": "payment"
+    },
+    "issue-quotation": {
+      "title": "Can you issue a quotation?",
+      "content": "Yes. We can issue a quotation.\n\nPlease ask us with [form](https://www.getkiara.com/contact) or at hello@kiara.team",
+      "category": "payment"
+    },
+    "kiara-doesnt-work": {
+      "title": "Kiara doesn't work. What should I check?",
+      "content": "If Kiara does not work after install, check out the answer here.\n\nIf Kiara does not work in the following situation, try these procedures:\n- You could invite Kiara to a channel but Kiara does not react\n\n**Steps:**\n1) Check how many users you have in your Slack workspace\n   - See the user count on the #general channel\n\n2) Change the user count at Kiara's dashboard",
+      "category": "faq"
+    },
+    "languages": {
+      "title": "What languages does Kiara support?",
+      "content": "Kiara supports 100 languages. If the language you need is not on the list, please contact them via their [contact form](https://www.getkiara.com/contact) or email hello@kiara.team.\n\nThe comprehensive list includes major world languages like English, Spanish, Chinese, Arabic, French, as well as regional languages like Afrikaans, Basque, Cebuano, and Asian languages like Hindi, Japanese, Korean, Vietnamese, and European languages like German, Italian, Russian, Portuguese.",
+      "category": "quick-start"
+    },
+    "mentions-channels": {
+      "title": "Are mentions (@someone) and channels (#channel) translated properly?",
+      "content": "**Mentions (@someone)**: Mentions are translated properly.\n\n**Channels (#channel)**: Translated properly in some languages, shows differently in other languages.",
+      "category": "faq"
+    },
+    "message-length": {
+      "title": "Is there a limit on message length?",
+      "content": "Yes. Maximum length is 5000 characters for a message.",
+      "category": "faq"
+    },
+    "mobile-use": {
+      "title": "Can I use Kiara on my mobile?",
+      "content": "Yes. You can use Kiara on your mobile inside of Slack mobile app.",
+      "category": "faq"
+    },
+    "past-messages": {
+      "title": "Are past messages deleted if I cancel my subscription?",
+      "content": "No. If you cancel your subscription, Kiara will stop the translation. The past messages will not be deleted.",
+      "category": "cancellation"
+    },
+    "pay-by-others": {
+      "title": "I installed Kiara but someone else needs to pay. How do I change the payer?",
+      "content": "## How to change the payer\n\nYou can change the payer from the dashboard.\n\n**Steps to change the payer:**\n\n1. Access [Kiara's website](https://www.getkiara.com/) and click the sign-in button at the top\n2. Follow the screen to authorize the app and access your info\n3. After logging into the dashboard, click \"Plan Setting\" button",
+      "category": "payment"
+    },
+    "payment-dashboard-access": {
+      "title": "How can we get to the payment dashboard?",
+      "content": "To access the payment dashboard:\n\n1. Go to www.getkiara.com\n2. Click the 'arrow sign' (▼) next to the 'sign up' button at the top\n3. Enter the dashboard\n\nFor detailed guidance on updating your card, please refer to the [update card guide](https://www.getkiara.com/help/article/update-card).",
+      "category": "payment"
+    },
+    "payment-separate-payer": {
+      "title": "How to start Kiara when paying separately",
+      "content": "Coming Soon\n\nDetailed instructions for setting up Kiara when the installer and payer are different people will be available soon. For immediate assistance, please contact us at hello@kiara.team",
+      "category": "payment"
+    },
+    "quick-start": {
+      "title": "Quick start guide",
+      "content": "## Before Install\n- Check how many users are in your Slack workspace beforehand\n- **Tip**: Ensure the number of people registered with Kiara matches the actual number of people in your Slack workspace\n\n## How to Install Kiara\n(Note: The specific installation steps are missing from this content)\n\n## Additional Tips\n**Important Note**: If an error appears after entering credit card information, the article recommends:\n- Contacting support before attempting again\n- Reach out via:\n  - Chat\n  - [Contact form](https://www.getkiara.com/contact)\n  - Email: hello@kiara.team",
+      "category": "quick-start"
+    },
+    "reinstall-kiara": {
+      "title": "How to re-install Kiara after technical problem",
+      "content": "To re-install Kiara after experiencing technical problems:\n\n1. Remove Kiara from your Slack workspace\n2. Clear browser cache and cookies\n3. Restart your browser\n4. Follow the standard installation process again\n5. Ensure user count matches your Slack workspace\n6. Contact support if issues persist at hello@kiara.team",
+      "category": "faq"
+    },
+    "remove-kiara-app": {
+      "title": "How to remove Kiara app",
+      "content": "Removing Kiara is the same process as removing other Slack apps.\n\n**Steps:**\n1. Follow the [official Slack instructions](https://slack.com/help/articles/360003125231-Remove-apps-and-custom-integrations-from-your-workspace) for removing apps from your workspace\n2. Also email your cancellation request to hello@kiara.team to ensure your subscription is properly terminated",
+      "category": "cancellation"
+    },
+    "sentence": {
+      "title": "What happens if a sentence contains more than one language?",
+      "content": "The most appropriate language will be detected and reflected into the translated result.",
+      "category": "faq"
+    },
+    "shown-language": {
+      "title": "Can I show only one language translation?",
+      "content": "For example, if you have 3 languages in your channel, but you need only one to be translated.\n\n**Answer**: No. We cannot provide this feature at the moment. Since some customers asked same issue, we will implement when we are ready.",
+      "category": "faq"
+    },
+    "signin-issues": {
+      "title": "I could not sign-in or up. I see nothing after doing it",
+      "content": "**Important:** Only one person can be an admin of Kiara Translator.\n\n**Example:**\nIf alice@kiara.team already signed up and paid, bob@kiara.team cannot sign in as admin.\n\n**Solution:**\nEnsure you're using the admin account that was used for initial signup and payment. For access issues, contact hello@kiara.team",
+      "category": "faq"
+    },
+    "signup-properly": {
+      "title": "How to sign up properly?",
+      "content": "Due to the nature of Slack plug-in, there are some ways to install Kiara and 1 is not valid way.\n\nBelow is valid way so please double check your way when your installed Kiara is not working properly.\n\nQuick Start\n\nhttps://www.getkiara.com/help/category/quick-start\n\nhttps://www.getkiara.com/help/article/install-kiara\n\nTo install Kiara to your slack workspace, you will need to access our website and click \"Try create it free for 14 days\" button on the top page. And follow the screen.\n\nhttps://youtu.be/oMpMK2riRgs",
+      "category": "quick-start"
+    },
+    "special-price-payment": {
+      "title": "How can you pay when you agreed a special price with Kiara customer support?",
+      "content": "**For customers with customized pricing:**\n\n1. Choose the plan: 1 person = $3/month (tentatively)\n2. We will refund you $3 immediately\n3. We will send you the agreed price payment URL separately\n\n**Note:** This temporary selection allows us to set up your custom pricing correctly. Contact hello@kiara.team if you have questions.",
+      "category": "payment"
+    },
+    "status-consumption": {
+      "title": "What is 'Status' and 'Consumption'?",
+      "content": "## What is \"Status\"?\n\nIf you click \"Status\" button after you call Kiara by saying \"@kiara\" in the message box, the languages you set and the consumption will be shown.\n\n## What is \"Consumption\"?\n\nIt shows the number of characters and the percentage you have used.\n\n**Note**: As of Jan 2021, they are providing translation as \"unlimited\". So you do not have to worry about it!",
+      "category": "how-to-use"
+    },
+    "translation-consumption-monitoring": {
+      "title": "Can we monitor translation consumption in real-time?",
+      "content": "Sorry. Due to the high traffic, we can not provide this dashboard as of Sep 2025.\n\nSince some big customers consume 100M characters/month, technically we can not run SQL smoothly.\n\n🔍 リアルタイムで翻訳利用量を確認することはできますか No.0902申し訳ございませんが、トラフィックが非常に多いため、2025年9月現在このダッシュボードをご提供することができません。一部の大口顧客様が月間1億文字を消費されているため、技術的にSQLをスムーズに実行することができない状況です。",
+      "category": "faq"
+    },
+    "translation-function": {
+      "title": "How do I turn translation on or off?",
+      "content": "## Turn on the translation function\n\nSay \"@kiara\" in the message box, click \"Setting\" and turn on \"Translation\".\n\n## Turn off the translation function\n\nSay \"@kiara\" in the message box, click \"Setting\" and turn off \"Translation\".",
+      "category": "how-to-use"
+    },
+    "translation-in-reply": {
+      "title": "What is 'Translation in reply' mode?",
+      "content": "When the timeline feels too noisy, users can activate \"Translation in reply\" mode to reduce timeline noise.\n\n**To use the mode:**\n1. Say \"@kiara\" in the message box to call Kiara\n2. Click \"Setting\"\n3. Set \"Translation in reply\"",
+      "category": "how-to-use"
+    },
+    "translation-memory": {
+      "title": "Do you have 'translation memory' or 'glossary'?",
+      "content": "No. If you need to download the result of translation or want to have such dashboard, we will consider to build it. Please tell us if necessary.",
+      "category": "faq"
+    },
+    "update-card": {
+      "title": "How do I update my credit card details?",
+      "content": "You can update your credit card details from the dashboard by following these steps:\n\n1. Access the website and click the \"sign in\" button at the top\n2. Authorize the app and access your info\n3. After logging into the dashboard, click the \"Plan Setting\" button\n4. Click the \"Update Plan Setting\" button\n5. Fill in the Payment form and email address\n6. Click \"Update Plan and Payment\"",
+      "category": "payment"
+    },
+    "workflow-translation": {
+      "title": "Can Kiara translate Slack Workflow?",
+      "content": "Sorry. Currently we do not handle Workflow or bot translation.\n\n**Why:**\nThis might cause an 'infinite loop' of translation when bot translates bot, leading to technical issues.\n\n**Future Plans:**\nWhen we come up with a nice solution, we will develop it and add it to our roadmap.",
+      "category": "faq"
+    },
+    "wrong-translation": {
+      "title": "The translation is wrong. What should I do?",
+      "content": "Currently our customers say Kiara translation accuracy is 90%. We find that it is necessary to provide better translation in special terms, nuances etc. Since the translation is a core part of our service, we will keep improving it.\n\nThe company encourages users to report significant mistranslation issues through their:\n- Contact Form\n- Email: hello@kiara.team",
+      "category": "faq"
+    }
+  },
+  "search": {
+    "placeholder": "Search",
+    "button": "Ask AI",
+    "comingSoon": "Coming Soon",
+    "dialogTitle": "Ask AI - Coming Soon",
+    "dialogDescription1": "We're building an AI assistant to help you navigate and understand Dave's experience, publications, and expertise.",
+    "dialogDescription2": "Stay tuned for this exciting feature!",
+    "gotIt": "Got it"
   }
 }

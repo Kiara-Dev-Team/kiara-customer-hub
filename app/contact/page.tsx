@@ -1,31 +1,34 @@
+"use client"
+
 import { DocsLayout } from "@/components/docs-layout"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { T } from "@tolgee/react"
 
 const navigation = [
   {
-    title: "Home",
+    title: "helpNav.home",
     href: "/",
   },
   {
-    title: "FAQ",
+    title: "helpNav.faq",
     href: "/faq",
   },
   {
-    title: "Quick Links",
+    title: "helpNav.quickLinks",
     href: "/quick",
   },
   {
-    title: "Service Level",
+    title: "helpNav.serviceLevel",
     href: "/service-level",
   },
   {
-    title: "Roadmap",
+    title: "helpNav.roadmap",
     href: "/roadmap",
   },
   {
-    title: "Contact",
+    title: "helpNav.contact",
     href: "/contact",
   },
 ]
@@ -34,38 +37,50 @@ export default function ContactPage() {
   return (
     <DocsLayout navigation={navigation} title="Contact Us">
       <section className="mb-12">
-        <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
+        <h1 className="text-4xl font-bold mb-4">
+          <T keyName="contactPage.title" />
+        </h1>
         <p className="text-lg text-muted-foreground mb-8">
-          Get in touch with our team. We're here to help with any questions or issues you may have.
+          <T keyName="contactPage.description" />
         </p>
       </section>
 
       <div className="grid gap-6 md:grid-cols-2 mb-12">
         <Card className="p-6">
-          <h2 className="text-2xl font-semibold mb-4">Email</h2>
+          <h2 className="text-2xl font-semibold mb-4">
+            <T keyName="contactPage.emailTitle" />
+          </h2>
           <p className="text-muted-foreground mb-4">
-            Send us an email and we'll get back to you within 24 hours.
+            <T keyName="contactPage.emailDesc" />
           </p>
           <Button asChild>
-            <a href="mailto:hello@kiara.team">hello@kiara.team</a>
+            <a href="mailto:hello@kiara.team">
+              <T keyName="contactPage.emailAddress" />
+            </a>
           </Button>
         </Card>
 
         <Card className="p-6">
-          <h2 className="text-2xl font-semibold mb-4">Contact Form</h2>
+          <h2 className="text-2xl font-semibold mb-4">
+            <T keyName="contactPage.contactFormTitle" />
+          </h2>
           <p className="text-muted-foreground mb-4">
-            Fill out our contact form for detailed inquiries or support requests.
+            <T keyName="contactPage.contactFormDesc" />
           </p>
           <Button asChild variant="outline">
             <Link href="https://www.getkiara.com/contact" target="_blank" rel="noopener noreferrer">
-              Open Contact Form
+              <T keyName="contactPage.contactFormBtn" />
             </Link>
           </Button>
         </Card>
 
         <Card className="p-6">
-          <h2 className="text-2xl font-semibold mb-4">Phone / WhatsApp</h2>
-          <p className="text-muted-foreground mb-4">Call or text us for immediate assistance.</p>
+          <h2 className="text-2xl font-semibold mb-4">
+            <T keyName="contactPage.phoneTitle" />
+          </h2>
+          <p className="text-muted-foreground mb-4">
+            <T keyName="contactPage.phoneDesc" />
+          </p>
           <div className="space-y-2">
             <p className="font-mono">+81 80 6306 2223</p>
             <p className="font-mono">+80 9286 3531</p>
@@ -73,59 +88,77 @@ export default function ContactPage() {
         </Card>
 
         <Card className="p-6">
-          <h2 className="text-2xl font-semibold mb-4">Live Chat</h2>
+          <h2 className="text-2xl font-semibold mb-4">
+            <T keyName="contactPage.liveChatTitle" />
+          </h2>
           <p className="text-muted-foreground mb-4">
-            Use the chat box on the bottom right of the screen for instant support.
+            <T keyName="contactPage.liveChatDesc" />
           </p>
-          <p className="text-sm text-muted-foreground">Available during business hours</p>
+          <p className="text-sm text-muted-foreground">
+            <T keyName="contactPage.liveChatHours" />
+          </p>
         </Card>
       </div>
 
       <section className="mb-12">
-        <h2 className="text-2xl font-semibold mb-6">Common Reasons to Contact Us</h2>
+        <h2 className="text-2xl font-semibold mb-6">
+          <T keyName="contactPage.reasonsTitle" />
+        </h2>
         <div className="grid gap-4 md:grid-cols-2">
           <Card className="p-4">
-            <h3 className="font-semibold mb-2">Sales Inquiries</h3>
+            <h3 className="font-semibold mb-2">
+              <T keyName="contactPage.salesTitle" />
+            </h3>
             <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
-              <li>Pricing and discounts</li>
-              <li>Enterprise plans</li>
-              <li>Quotations and invoicing</li>
+              <li><T keyName="contactPage.salesItem1" /></li>
+              <li><T keyName="contactPage.salesItem2" /></li>
+              <li><T keyName="contactPage.salesItem3" /></li>
             </ul>
           </Card>
           <Card className="p-4">
-            <h3 className="font-semibold mb-2">Technical Support</h3>
+            <h3 className="font-semibold mb-2">
+              <T keyName="contactPage.technicalTitle" />
+            </h3>
             <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
-              <li>Installation issues</li>
-              <li>Translation problems</li>
-              <li>Account management</li>
+              <li><T keyName="contactPage.technicalItem1" /></li>
+              <li><T keyName="contactPage.technicalItem2" /></li>
+              <li><T keyName="contactPage.technicalItem3" /></li>
             </ul>
           </Card>
           <Card className="p-4">
-            <h3 className="font-semibold mb-2">Billing & Payments</h3>
+            <h3 className="font-semibold mb-2">
+              <T keyName="contactPage.billingTitle" />
+            </h3>
             <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
-              <li>Payment methods</li>
-              <li>Update billing info</li>
-              <li>Subscription changes</li>
+              <li><T keyName="contactPage.billingItem1" /></li>
+              <li><T keyName="contactPage.billingItem2" /></li>
+              <li><T keyName="contactPage.billingItem3" /></li>
             </ul>
           </Card>
           <Card className="p-4">
-            <h3 className="font-semibold mb-2">Cancellations</h3>
+            <h3 className="font-semibold mb-2">
+              <T keyName="contactPage.cancellationTitle" />
+            </h3>
             <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
-              <li>Cancel subscription</li>
-              <li>Delete Kiara</li>
-              <li>Data retention</li>
+              <li><T keyName="contactPage.cancellationItem1" /></li>
+              <li><T keyName="contactPage.cancellationItem2" /></li>
+              <li><T keyName="contactPage.cancellationItem3" /></li>
             </ul>
           </Card>
         </div>
       </section>
 
       <section className="p-8 bg-muted rounded-lg">
-        <h2 className="text-2xl font-semibold mb-4">Before You Contact Us</h2>
+        <h2 className="text-2xl font-semibold mb-4">
+          <T keyName="contactPage.beforeContactTitle" />
+        </h2>
         <p className="text-muted-foreground mb-4">
-          Check our FAQ section - you might find your answer there!
+          <T keyName="contactPage.beforeContactDesc" />
         </p>
         <Button asChild variant="outline">
-          <Link href="/faq">Browse FAQ</Link>
+          <Link href="/faq">
+            <T keyName="contactPage.browseFAQBtn" />
+          </Link>
         </Button>
       </section>
     </DocsLayout>

@@ -37,3 +37,4 @@ next-env.d.ts
 
 # Internal documentation (not for git)
 PROJECT_CONTEXT.md
+docs/FAQ_TRANSLATION_IMPLEMENTATION_PLAN.md
