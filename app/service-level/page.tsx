@@ -4,37 +4,11 @@ import { DocsLayout } from "@/components/docs-layout"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { T } from "@tolgee/react"
-
-const navigation = [
-  {
-    title: "helpNav.home",
-    href: "/",
-  },
-  {
-    title: "helpNav.faq",
-    href: "/faq",
-  },
-  {
-    title: "helpNav.quickLinks",
-    href: "/quick",
-  },
-  {
-    title: "helpNav.serviceLevel",
-    href: "/service-level",
-  },
-  {
-    title: "helpNav.roadmap",
-    href: "/roadmap",
-  },
-  {
-    title: "helpNav.contact",
-    href: "/contact",
-  },
-]
+import { fullNavigation } from "@/lib/navigation"
 
 export default function ServiceLevelPage() {
   return (
-    <DocsLayout navigation={navigation} title="Service Level Agreement">
+    <DocsLayout navigation={fullNavigation} title="Service Level Agreement">
       <section className="mb-12">
         <h1 className="text-4xl font-bold mb-4">
           <T keyName="serviceLevelPage.title" />
