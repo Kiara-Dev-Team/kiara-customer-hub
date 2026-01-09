@@ -164,3 +164,20 @@
 .prose strong {
   @apply font-semibold text-foreground;
 }
+
+/* Search highlight animation */
+@keyframes highlight-flash {
+  0%, 100% {
+    background-color: transparent;
+  }
+  50% {
+    background-color: rgba(250, 204, 21, 0.3);
+  }
+}
+
+.highlight-flash {
+  animation: highlight-flash 2s ease-in-out;
+  border-radius: 0.25rem;
+  padding: 0.25rem;
+  margin: -0.25rem;
+}
