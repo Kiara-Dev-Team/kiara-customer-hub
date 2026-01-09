@@ -2,6 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { ChevronLeft, ChevronDown, ChevronRight } from "lucide-react"
 import { useTranslate } from "@tolgee/react"
 import { TopNavigation, type NavItem } from "@/components/top-navigation"
@@ -13,17 +14,44 @@ interface DocsLayoutProps {
   children: React.ReactNode
 }
 
-function SidebarNavItem({ item, level = 0, currentHash }: { item: NavItem; level?: number; currentHash: string }) {
+function SidebarNavItem({ item, level = 0 }: { item: NavItem; level?: number }) {
   const { t } = useTranslate()
+  const pathname = usePathname()
   const [isOpen, setIsOpen] = React.useState(false)
+  const [currentHash, setCurrentHash] = React.useState("")
   const hasChildren = item.items && item.items.length > 0
   const contentId = React.useId()
 
-  // Check if this item or any of its children (recursively) are active
-  const isActive = item.href === currentHash
+  // Track hash changes
+  React.useEffect(() => {
+    const updateHash = () => setCurrentHash(window.location.hash)
+    updateHash()
+    window.addEventListener("hashchange", updateHash)
+    return () => window.removeEventListener("hashchange", updateHash)
+  }, [])
+
+  // Check if this item is active (matches pathname or pathname + hash)
+  const isActive = React.useMemo(() => {
+    if (!item.href) return false
+    const [itemPath, itemHash] = item.href.split('#')
+
+    // If item has hash, check both path and hash
+    if (itemHash) {
+      return pathname === itemPath && currentHash === '#' + itemHash
+    }
+    // Otherwise just check path
+    return pathname === itemPath
+  }, [item.href, pathname, currentHash])
+
+  // Check if any children are active
   const checkActiveChild = (items: NavItem[]): boolean => {
     return items.some(child => {
-      if (child.href === currentHash) return true
+      if (!child.href) return false
+      const [childPath, childHash] = child.href.split('#')
+      const childActive = childHash
+        ? pathname === childPath && currentHash === '#' + childHash
+        : pathname === childPath
+      if (childActive) return true
       if (child.items) return checkActiveChild(child.items)
       return false
     })
@@ -37,51 +65,33 @@ function SidebarNavItem({ item, level = 0, currentHash }: { item: NavItem; level
     }
   }, [hasActiveChild, isActive])
 
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault()
-      setIsOpen(!isOpen)
-      // Navigate to first child if exists
-      if (item.items && item.items.length > 0 && item.items[0].href) {
-        window.location.hash = item.items[0].href
-      }
-    }
-  }
-
   return (
     <div>
       {item.href ? (
-        <a
+        <Link
           href={item.href}
           className={cn(
             "block px-3 py-2 text-sm rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-[#635bff] focus:ring-offset-2",
             level > 0 && "ml-4",
-            // Level 0 (companies): bold when active or has active child
+            // Level 0: bold when active or has active child
             level === 0 && (isActive || hasActiveChild) && "font-semibold",
-            // Level 1+ (sub-sections): blue when active
+            // Level 1+: blue when active
             level > 0 && isActive && "text-[#635bff] font-medium",
             // Default colors
             !isActive && "text-slate-600 dark:text-slate-300 hover:text-[#635bff] hover:bg-slate-50 dark:hover:bg-slate-800"
           )}
         >
           {t(item.title)}
-        </a>
+        </Link>
       ) : (
         <button
-          onClick={() => {
-            setIsOpen(!isOpen)
-            // Navigate to first child if exists
-            if (item.items && item.items.length > 0 && item.items[0].href) {
-              window.location.hash = item.items[0].href
-            }
-          }}
-          onKeyDown={handleKeyDown}
+          onClick={() => setIsOpen(!isOpen)}
           aria-expanded={hasChildren ? isOpen : undefined}
           aria-controls={hasChildren ? contentId : undefined}
           className={cn(
             "flex w-full items-center justify-between px-3 py-2 text-sm rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-[#635bff] focus:ring-offset-2",
             level > 0 && "ml-4",
-            // Level 0 (companies): bold when has active child
+            // Level 0: bold when has active child
             level === 0 && hasActiveChild && "font-semibold",
             // Default colors
             "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800"
@@ -102,7 +112,7 @@ function SidebarNavItem({ item, level = 0, currentHash }: { item: NavItem; level
       {hasChildren && isOpen && (
         <div id={contentId} className="mt-1 space-y-1">
           {item.items?.map((child, index) => (
-            <SidebarNavItem key={index} item={child} level={level + 1} currentHash={currentHash} />
+            <SidebarNavItem key={index} item={child} level={level + 1} />
           ))}
         </div>
       )}
@@ -111,39 +121,13 @@ function SidebarNavItem({ item, level = 0, currentHash }: { item: NavItem; level
 }
 
 export function DocsLayout({ navigation, children }: DocsLayoutProps) {
-  const [activeSection, setActiveSection] = React.useState<string>("")
+  const { t } = useTranslate()
   const [isSidebarOpen, setIsSidebarOpen] = React.useState(true)
-  const [currentHash, setCurrentHash] = React.useState("")
 
-  // Track hash changes and set default
-  React.useEffect(() => {
-    const updateHash = () => {
-      const hash = window.location.hash || "#about"
-      setCurrentHash(hash)
-
-      // Check if hash belongs to Experience section
-      const experienceHashes = ["#kiara", "#kiara-features", "#kiara-impact", "#liquid", "#liquid-ekyc", "#cuusoo", "#itochu"]
-      if (experienceHashes.includes(hash)) {
-        setActiveSection("navigation.experience")
-      } else {
-        setActiveSection("")
-      }
-    }
-    updateHash()
-
-    // Set default hash if none exists
-    if (!window.location.hash) {
-      window.location.hash = "#about"
-    }
-
-    window.addEventListener("hashchange", updateHash)
-    return () => window.removeEventListener("hashchange", updateHash)
-  }, [])
-
-  // Get the active navigation item with sub-items
+  // Get the active navigation item with sub-items (first item that has items)
   const activeSectionData = React.useMemo(() => {
-    return navigation.find(item => item.title === activeSection && item.items)
-  }, [navigation, activeSection])
+    return navigation.find(item => item.items && item.items.length > 0)
+  }, [navigation])
 
   // Reset sidebar when activeSection changes
   React.useEffect(() => {
@@ -155,11 +139,7 @@ export function DocsLayout({ navigation, children }: DocsLayoutProps) {
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-background">
       {/* Top Navigation */}
-      <TopNavigation
-        navigation={navigation}
-        activeSection={activeSection}
-        onSectionChange={setActiveSection}
-      />
+      <TopNavigation navigation={navigation} />
 
       {/* Language Selector */}
       <LanguageSelector />
@@ -178,7 +158,7 @@ export function DocsLayout({ navigation, children }: DocsLayoutProps) {
               <div className="p-6">
                 <div className="flex items-center justify-between mb-6">
                   <h3 className="text-base font-semibold text-[#635bff]">
-                    {activeSectionData.title}
+                    {t(activeSectionData.title)}
                   </h3>
                   <button
                     onClick={() => setIsSidebarOpen(false)}
@@ -190,7 +170,7 @@ export function DocsLayout({ navigation, children }: DocsLayoutProps) {
                 </div>
                 <nav className="space-y-1">
                   {activeSectionData.items.map((item, index) => (
-                    <SidebarNavItem key={index} item={item} currentHash={currentHash} />
+                    <SidebarNavItem key={index} item={item} />
                   ))}
                 </nav>
               </div>

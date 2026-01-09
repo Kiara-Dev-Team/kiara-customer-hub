@@ -3,6 +3,7 @@
 import * as React from "react"
 import Link from "next/link"
 import Image from "next/image"
+import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { useTranslate } from "@tolgee/react"
 import { SearchDialog } from "@/components/search-dialog"
@@ -17,46 +18,12 @@ export interface NavItem {
 
 interface TopNavigationProps {
   navigation: NavItem[]
-  activeSection?: string
-  onSectionChange?: (section: string) => void
 }
 
-export function TopNavigation({ navigation, activeSection, onSectionChange }: TopNavigationProps) {
+export function TopNavigation({ navigation }: TopNavigationProps) {
   const { t } = useTranslate()
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
-  const [currentHash, setCurrentHash] = React.useState("")
-
-  // Track hash changes
-  React.useEffect(() => {
-    const updateHash = () => {
-      const hash = window.location.hash || "#about" // Default to #about if no hash
-      setCurrentHash(hash)
-    }
-    updateHash()
-    window.addEventListener("hashchange", updateHash)
-    return () => window.removeEventListener("hashchange", updateHash)
-  }, [])
-
-  const handleSectionClick = (item: NavItem) => {
-    if (item.href) {
-      // For items with direct hrefs, clear active section
-      if (onSectionChange) {
-        onSectionChange("")
-      }
-      // Manually update hash for immediate feedback
-      setTimeout(() => setCurrentHash(item.href), 0)
-    } else if (item.items && onSectionChange) {
-      // For items with sub-items (Experience), set as active section and navigate to #experience
-      onSectionChange(item.title)
-      // Clear the hash to remove active indicators from other tabs
-      setCurrentHash("")
-      // Navigate to the experience section
-      const experienceSection = document.getElementById("experience")
-      if (experienceSection) {
-        experienceSection.scrollIntoView({ behavior: "smooth" })
-      }
-    }
-  }
+  const pathname = usePathname()
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-[#ffffff] dark:bg-background">
@@ -111,46 +78,40 @@ export function TopNavigation({ navigation, activeSection, onSectionChange }: To
           {/* Desktop Navigation - Flat Tabs */}
           <div className="hidden md:flex items-center space-x-6">
             {navigation.map((item) => {
-              // Determine if this tab is active
+              // Determine if this tab is active based on pathname
               let isActive = false
+              let href = item.href || "#"
+
               if (item.items) {
-                // For items with sub-items (Experience), check if it's the active section
-                isActive = activeSection === item.title
+                // For items with sub-items, check if any sub-item matches current path
+                // Or use the first sub-item's href as the link
+                const firstSubItem = item.items[0]
+                if (firstSubItem?.href) {
+                  href = firstSubItem.href
+                  // Check if pathname starts with any sub-item path
+                  isActive = item.items.some(subItem =>
+                    subItem.href && pathname?.startsWith(subItem.href.split('#')[0])
+                  )
+                }
               } else if (item.href) {
-                // For items with direct hrefs, check if hash matches
-                isActive = currentHash === item.href
+                // For items with direct hrefs, check if pathname matches
+                const itemPath = item.href.split('#')[0]
+                isActive = pathname === itemPath || pathname?.startsWith(itemPath + '/')
               }
 
               return (
                 <div key={item.title} className="relative">
-                  {item.href ? (
-                    <Link
-                      href={item.href}
-                      onClick={(e) => {
-                        handleSectionClick(item)
-                      }}
-                      className={cn(
-                        "text-sm font-medium py-3 block border-b-2 transition-colors",
-                        isActive
-                          ? "text-[#635bff] border-[#635bff]"
-                          : "text-slate-600 dark:text-slate-300 border-transparent hover:text-slate-900 dark:hover:text-slate-100"
-                      )}
-                    >
-                      {t(item.title)}
-                    </Link>
-                  ) : (
-                    <button
-                      onClick={() => handleSectionClick(item)}
-                      className={cn(
-                        "text-sm font-medium py-3 block border-b-2 transition-colors",
-                        isActive
-                          ? "text-[#635bff] border-[#635bff]"
-                          : "text-slate-600 dark:text-slate-300 border-transparent hover:text-slate-900 dark:hover:text-slate-100"
-                      )}
-                    >
-                      {t(item.title)}
-                    </button>
-                  )}
+                  <Link
+                    href={href}
+                    className={cn(
+                      "text-sm font-medium py-3 block border-b-2 transition-colors",
+                      isActive
+                        ? "text-[#635bff] border-[#635bff]"
+                        : "text-slate-600 dark:text-slate-300 border-transparent hover:text-slate-900 dark:hover:text-slate-100"
+                    )}
+                  >
+                    {t(item.title)}
+                  </Link>
                 </div>
               )
             })}
@@ -165,19 +126,23 @@ export function TopNavigation({ navigation, activeSection, onSectionChange }: To
       {isMobileMenuOpen && (
         <div className="md:hidden border-t bg-background">
           <div className="container mx-auto px-6 py-4 space-y-2">
-            {navigation.map((item) => (
-              <Link
-                key={item.title}
-                href={item.href || "#"}
-                onClick={() => {
-                  setIsMobileMenuOpen(false)
-                  handleSectionClick(item)
-                }}
-                className="block px-4 py-2 text-sm font-medium rounded-md hover:bg-accent transition-colors"
-              >
-                {t(item.title)}
-              </Link>
-            ))}
+            {navigation.map((item) => {
+              let href = item.href || "#"
+              if (item.items && item.items[0]?.href) {
+                href = item.items[0].href
+              }
+
+              return (
+                <Link
+                  key={item.title}
+                  href={href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block px-4 py-2 text-sm font-medium rounded-md hover:bg-accent transition-colors"
+                >
+                  {t(item.title)}
+                </Link>
+              )
+            })}
           </div>
         </div>
       )}
