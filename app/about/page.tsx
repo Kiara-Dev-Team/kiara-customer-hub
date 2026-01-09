@@ -10,23 +10,23 @@ export default function AboutPage() {
     <DocsLayout navigation={fullNavigation}>
       {/* About Section */}
       <section id="about" className="mb-16">
-        <h1 className="text-4xl font-bold mb-8"><T keyName="hero.greeting" /></h1>
-        <h2 className="text-3xl font-semibold mb-6"><T keyName="about.title" /></h2>
+        <h1 className="text-4xl font-bold mb-8" data-translation-key="hero.greeting"><T keyName="hero.greeting" /></h1>
+        <h2 className="text-3xl font-semibold mb-6" data-translation-key="about.title"><T keyName="about.title" /></h2>
 
         <div className="mb-8">
-          <p className="text-lg leading-relaxed mb-4">
+          <p className="text-lg leading-relaxed mb-4" data-translation-key="about.intro1">
             <T keyName="about.intro1" />
           </p>
-          <p className="text-lg leading-relaxed mb-4">
+          <p className="text-lg leading-relaxed mb-4" data-translation-key="about.intro2">
             <T keyName="about.intro2" />
           </p>
-          <p className="text-lg leading-relaxed mb-4">
+          <p className="text-lg leading-relaxed mb-4" data-translation-key="about.intro3">
             <T keyName="about.intro3" />
           </p>
-          <p className="text-lg leading-relaxed mb-4">
+          <p className="text-lg leading-relaxed mb-4" data-translation-key="about.intro4">
             <T keyName="about.intro4" />
           </p>
-          <p className="text-lg leading-relaxed">
+          <p className="text-lg leading-relaxed" data-translation-key="about.intro5">
             <T keyName="about.intro5" />
           </p>
         </div>
