@@ -6,37 +6,11 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { T } from "@tolgee/react"
-
-const navigation = [
-  {
-    title: "helpNav.home",
-    href: "/",
-  },
-  {
-    title: "helpNav.faq",
-    href: "/faq",
-  },
-  {
-    title: "helpNav.quickLinks",
-    href: "/quick",
-  },
-  {
-    title: "helpNav.serviceLevel",
-    href: "/service-level",
-  },
-  {
-    title: "helpNav.roadmap",
-    href: "/roadmap",
-  },
-  {
-    title: "helpNav.contact",
-    href: "/contact",
-  },
-]
+import { fullNavigation } from "@/lib/navigation"
 
 export default function RoadmapPage() {
   return (
-    <DocsLayout navigation={navigation} title="Product Roadmap">
+    <DocsLayout navigation={fullNavigation} title="Product Roadmap">
       <section className="mb-12">
         <h1 className="text-4xl font-bold mb-4">
           <T keyName="roadmapPage.title" />
