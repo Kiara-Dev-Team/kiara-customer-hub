@@ -119,7 +119,7 @@ export default function FAQPage() {
             </Link>
           </Button>
           <Button asChild variant="outline">
-            <a href="mailto:hello@kiara.team">
+            <a href="mailto:dai@kiara.team">
               <T keyName="faqPage.emailUsBtn" />
             </a>
           </Button>

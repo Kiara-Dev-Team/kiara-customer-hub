@@ -28,8 +28,8 @@ export default function ContactPage() {
             <T keyName="contactPage.emailDesc" />
           </p>
           <Button asChild>
-            <a href="mailto:hello@kiara.team">
-              <T keyName="contactPage.emailAddress" />
+            <a href="mailto:dai@kiara.team">
+              dai@kiara.team
             </a>
           </Button>
         </Card>
