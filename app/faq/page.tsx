@@ -56,7 +56,7 @@ export default function FAQPage() {
   const { t } = useTranslate()
 
   return (
-    <DocsLayout navigation={navigation} title="Help & FAQ">
+    <DocsLayout navigation={navigation}>
       {/* Hero Section */}
       <section className="mb-8">
         <h1 className="text-3xl font-bold mb-3">

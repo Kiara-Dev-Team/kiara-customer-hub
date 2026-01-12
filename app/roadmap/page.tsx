@@ -36,7 +36,7 @@ const navigation = [
 
 export default function RoadmapPage() {
   return (
-    <DocsLayout navigation={navigation} title="Product Roadmap">
+    <DocsLayout navigation={navigation}>
       <section className="mb-12">
         <h1 className="text-4xl font-bold mb-4">
           <T keyName="roadmapPage.title" />
