@@ -45,7 +45,7 @@ jobs:
           set +e
           set -o pipefail
           pnpm build 2>&1 | tee build.log
-          echo "exit_code=$?" >> "$GITHUB_OUTPUT"
+          echo "exit_code=${PIPESTATUS[0]}" >> "$GITHUB_OUTPUT"
           exit 0
 
       - name: Extract error blocks
@@ -53,6 +53,7 @@ jobs:
         shell: bash
         run: |
           # Extract error blocks with context (3 lines before, 6 lines after)
+          # Limit to 60000 chars due to GitHub comment size limits
           if grep -qE "error|Type error|TS[0-9]+:|Module not found|Cannot find module|Failed|✖" build.log; then
             grep -nE "error|Type error|TS[0-9]+:|Module not found|Cannot find module|Failed|✖" build.log \
             | head -n 20 \
@@ -89,6 +90,7 @@ jobs:
               : '(no error details available)';
             
             const marker = '<!-- build-errors-bot -->';
+            // Limit to 60000 chars to stay within GitHub comment size limits
             const body = [
               marker,
               "## ❌ Build Failed",
