@@ -21,11 +21,12 @@ export function AskAiButton() {
       {/* Desktop Button */}
       <Button
         onClick={() => setOpen(true)}
-        variant="outline"
-        className="hidden md:flex items-center gap-2 border-[#635bff] text-[#635bff] hover:bg-[#635bff] hover:text-white transition-colors"
+        variant="ghost"
+        size="sm"
+        className="hidden md:flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-[#635bff] hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
       >
         <Sparkles className="h-4 w-4" />
-        <span className="text-sm font-medium">{t('search.button')}</span>
+        <span className="text-sm font-normal">{t('search.button')}</span>
       </Button>
 
       {/* Mobile Button - Icon Only */}
