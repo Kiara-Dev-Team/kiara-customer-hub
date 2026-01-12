@@ -5,36 +5,11 @@ import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { T } from "@tolgee/react"
-
-const navigation = [
-  {
-    title: "helpNav.home",
-    href: "/",
-  },
-  {
-    title: "helpNav.faq",
-    href: "/faq",
-  },
-  {
-    title: "helpNav.quickLinks",
-    href: "/quick",
-  },
-  {
-    title: "helpNav.serviceLevel",
-    href: "/service-level",
-  },
-  {
-    title: "helpNav.roadmap",
-    href: "/roadmap",
-  },
-  {
-    title: "helpNav.contact",
-    href: "/contact",
-  },
-]
+import { fullNavigation } from "@/lib/navigation"
 
 export default function ContactPage() {
   return (
+    <DocsLayout navigation={fullNavigation} title="Contact Us">
     <DocsLayout navigation={navigation}>
       <section className="mb-12">
         <h1 className="text-4xl font-bold mb-4">
@@ -54,8 +29,8 @@ export default function ContactPage() {
             <T keyName="contactPage.emailDesc" />
           </p>
           <Button asChild>
-            <a href="mailto:hello@kiara.team">
-              <T keyName="contactPage.emailAddress" />
+            <a href="mailto:dai@kiara.team">
+              dai@kiara.team
             </a>
           </Button>
         </Card>

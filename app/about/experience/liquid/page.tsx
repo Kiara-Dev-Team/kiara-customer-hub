@@ -2,30 +2,11 @@
 
 import { DocsLayout } from "@/components/docs-layout"
 import { T } from "@tolgee/react"
-
-const navigation = [
-  {
-    title: "navigation.about",
-    items: [
-      { title: "aboutNav.overview", href: "/about" },
-      {
-        title: "navigation.experience",
-        items: [
-          { title: "experience.kiara.company", href: "/about/experience/kiara" },
-          { title: "experience.liquid.company", href: "/about/experience/liquid" },
-          { title: "experience.cuusoo.company", href: "/about/experience/cuusoo" },
-          { title: "experience.itochu.company", href: "/about/experience/itochu" },
-        ],
-      },
-      { title: "navigation.publications", href: "/about/publications" },
-      { title: "navigation.contact", href: "/about/contact" },
-    ],
-  },
-]
+import { fullNavigation } from "@/lib/navigation"
 
 export default function LiquidPage() {
   return (
-    <DocsLayout navigation={navigation}>
+    <DocsLayout navigation={fullNavigation}>
       <section className="mb-16">
         <div className="flex items-start justify-between mb-6">
           <div>

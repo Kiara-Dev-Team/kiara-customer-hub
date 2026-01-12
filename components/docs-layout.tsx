@@ -122,12 +122,31 @@ function SidebarNavItem({ item, level = 0 }: { item: NavItem; level?: number }) 
 
 export function DocsLayout({ navigation, children }: DocsLayoutProps) {
   const { t } = useTranslate()
+  const pathname = usePathname()
   const [isSidebarOpen, setIsSidebarOpen] = React.useState(true)
 
-  // Get the active navigation item with sub-items (first item that has items)
+  // Get the active navigation section based on current pathname
   const activeSectionData = React.useMemo(() => {
-    return navigation.find(item => item.items && item.items.length > 0)
-  }, [navigation])
+    // Helper function to check if pathname matches any href in the navigation item
+    const pathMatchesSection = (item: NavItem): boolean => {
+      if (!item.items) return false
+
+      const checkItems = (items: NavItem[]): boolean => {
+        return items.some(child => {
+          if (child.href) {
+            const [childPath] = child.href.split('#')
+            if (pathname === childPath) return true
+          }
+          if (child.items) return checkItems(child.items)
+          return false
+        })
+      }
+
+      return checkItems(item.items)
+    }
+
+    return navigation.find(item => pathMatchesSection(item))
+  }, [navigation, pathname])
 
   // Reset sidebar when activeSection changes
   React.useEffect(() => {

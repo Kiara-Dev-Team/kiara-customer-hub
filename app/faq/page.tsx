@@ -7,40 +7,7 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { T, useTranslate } from "@tolgee/react"
 import faqData from "@/data/faq-content.json"
-
-const navigation = [
-  {
-    title: "helpNav.home",
-    href: "/",
-  },
-  {
-    title: "helpNav.faq",
-    items: [
-      { title: "Quick Start", href: "/faq#quick-start" },
-      { title: "How to Use", href: "/faq#how-to-use" },
-      { title: "FAQ", href: "/faq#faq" },
-      { title: "Payment", href: "/faq#payment" },
-      { title: "Cancellation", href: "/faq#cancellation" },
-      { title: "Contact", href: "/faq#contact" },
-    ],
-  },
-  {
-    title: "helpNav.quickLinks",
-    href: "/quick",
-  },
-  {
-    title: "helpNav.serviceLevel",
-    href: "/service-level",
-  },
-  {
-    title: "helpNav.roadmap",
-    href: "/roadmap",
-  },
-  {
-    title: "helpNav.contact",
-    href: "/contact",
-  },
-]
+import { fullNavigation } from "@/lib/navigation"
 
 // Map category slugs to translation keys
 const categoryTranslationMap: Record<string, { name: string; desc: string }> = {
@@ -56,6 +23,7 @@ export default function FAQPage() {
   const { t } = useTranslate()
 
   return (
+    <DocsLayout navigation={fullNavigation} title="Help & FAQ">
     <DocsLayout navigation={navigation}>
       {/* Hero Section */}
       <section className="mb-8">
@@ -152,7 +120,7 @@ export default function FAQPage() {
             </Link>
           </Button>
           <Button asChild variant="outline">
-            <a href="mailto:hello@kiara.team">
+            <a href="mailto:dai@kiara.team">
               <T keyName="faqPage.emailUsBtn" />
             </a>
           </Button>

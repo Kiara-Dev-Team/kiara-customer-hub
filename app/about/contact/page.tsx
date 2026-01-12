@@ -4,30 +4,11 @@ import { DocsLayout } from "@/components/docs-layout"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { T } from "@tolgee/react"
-
-const navigation = [
-  {
-    title: "navigation.about",
-    items: [
-      { title: "aboutNav.overview", href: "/about" },
-      {
-        title: "navigation.experience",
-        items: [
-          { title: "experience.kiara.company", href: "/about/experience/kiara" },
-          { title: "experience.liquid.company", href: "/about/experience/liquid" },
-          { title: "experience.cuusoo.company", href: "/about/experience/cuusoo" },
-          { title: "experience.itochu.company", href: "/about/experience/itochu" },
-        ],
-      },
-      { title: "navigation.publications", href: "/about/publications" },
-      { title: "navigation.contact", href: "/about/contact" },
-    ],
-  },
-]
+import { fullNavigation } from "@/lib/navigation"
 
 export default function ContactPage() {
   return (
-    <DocsLayout navigation={navigation}>
+    <DocsLayout navigation={fullNavigation}>
       {/* Contact Section */}
       <section id="contact" className="mb-16">
         <h2 className="text-3xl font-semibold mb-6"><T keyName="contact.title" /></h2>
@@ -36,7 +17,7 @@ export default function ContactPage() {
         </p>
         <div className="flex flex-col sm:flex-row items-start gap-4 mb-8">
           <Button asChild size="lg">
-            <a href="mailto:dai@jenio.co"><T keyName="contact.emailButton" /></a>
+            <a href="mailto:dai@kiara.team"><T keyName="contact.emailButton" /></a>
           </Button>
           <Button asChild variant="outline" size="lg">
             <a href="https://www.linkedin.com/in/dai19980401" target="_blank" rel="noopener noreferrer">
@@ -45,7 +26,7 @@ export default function ContactPage() {
           </Button>
         </div>
         <div className="text-sm">
-          <p><strong><T keyName="contact.email" />:</strong> dai@jenio.co</p>
+          <p><strong><T keyName="contact.email" />:</strong> dai@kiara.team</p>
           <p><strong><T keyName="contact.mobile" />:</strong> +81-80-6306-2223</p>
           <p><strong><T keyName="contact.location" />:</strong> <T keyName="contact.locationValue" /></p>
           <p><strong><T keyName="contact.website" />:</strong> <Link href="https://www.kiara.team" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">www.kiara.team</Link></p>

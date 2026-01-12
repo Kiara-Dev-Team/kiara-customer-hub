@@ -3,30 +3,11 @@
 import { DocsLayout } from "@/components/docs-layout"
 import { Card } from "@/components/ui/card"
 import { T } from "@tolgee/react"
-
-const navigation = [
-  {
-    title: "navigation.about",
-    items: [
-      { title: "aboutNav.overview", href: "/about" },
-      {
-        title: "navigation.experience",
-        items: [
-          { title: "experience.kiara.company", href: "/about/experience/kiara" },
-          { title: "experience.liquid.company", href: "/about/experience/liquid" },
-          { title: "experience.cuusoo.company", href: "/about/experience/cuusoo" },
-          { title: "experience.itochu.company", href: "/about/experience/itochu" },
-        ],
-      },
-      { title: "navigation.publications", href: "/about/publications" },
-      { title: "navigation.contact", href: "/about/contact" },
-    ],
-  },
-]
+import { fullNavigation } from "@/lib/navigation"
 
 export default function PublicationsPage() {
   return (
-    <DocsLayout navigation={navigation}>
+    <DocsLayout navigation={fullNavigation}>
       {/* Publications Section */}
       <section id="publications" className="mb-16">
         <h2 className="text-3xl font-semibold mb-8"><T keyName="publications.title" /></h2>

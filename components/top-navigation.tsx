@@ -77,7 +77,7 @@ export function TopNavigation({ navigation }: TopNavigationProps) {
         <div className="container mx-auto flex h-12 items-center justify-between px-6">
           {/* Desktop Navigation - Flat Tabs */}
           <div className="hidden md:flex items-center space-x-6">
-            {navigation.map((item) => {
+            {navigation.filter(item => item.title !== "helpDropdown.help").map((item) => {
               // Determine if this tab is active based on pathname
               let isActive = false
               let href = item.href || "#"
