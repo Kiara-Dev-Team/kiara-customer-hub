@@ -31,6 +31,9 @@
     "publications": "Publications & Patents",
     "contact": "Contact"
   },
+  "aboutNav": {
+    "overview": "Overview"
+  },
   "experience": {
     "title": "Experience",
     "kiara": {
