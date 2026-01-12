@@ -1,0 +1,138 @@
+name: CI Build with Enhanced Error Handling
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+# Cancel outdated runs for the same PR/ref
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+# Minimal permissions
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build (capture logs)
+        id: build
+        shell: bash
+        run: |
+          set +e
+          set -o pipefail
+          pnpm build 2>&1 | tee build.log
+          echo "exit_code=$?" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Extract error blocks
+        if: steps.build.outputs.exit_code != '0'
+        shell: bash
+        run: |
+          # Extract error blocks with context (3 lines before, 6 lines after)
+          if grep -qE "error|Type error|TS[0-9]+:|Module not found|Cannot find module|Failed|✖" build.log; then
+            grep -nE "error|Type error|TS[0-9]+:|Module not found|Cannot find module|Failed|✖" build.log \
+            | head -n 20 \
+            | cut -d: -f1 \
+            | sort -n \
+            | uniq \
+            | while read -r line; do
+                start=$((line - 3)); [ $start -lt 1 ] && start=1
+                end=$((line + 6))
+                sed -n "${start},${end}p" build.log
+                echo "----"
+              done | head -c 60000 > errors_summary.txt
+          else
+            # Fallback: show last 100 lines if no regex matches
+            tail -n 100 build.log > errors_summary.txt
+          fi
+
+      - name: Upload full build log as artifact
+        if: steps.build.outputs.exit_code != '0'
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-log
+          path: build.log
+          retention-days: 7
+
+      - name: Comment on PR (create or update)
+        if: github.event_name == 'pull_request' && steps.build.outputs.exit_code != '0'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const errors = fs.existsSync('errors_summary.txt') 
+              ? fs.readFileSync('errors_summary.txt', 'utf8') 
+              : '(no error details available)';
+            
+            const marker = '<!-- build-errors-bot -->';
+            const body = [
+              marker,
+              "## ❌ Build Failed",
+              "",
+              "The build encountered errors. Here are the error blocks with context:",
+              "",
+              "```",
+              errors.trim().slice(0, 60000),
+              "```",
+              "",
+              `📦 Full build log is available as an artifact: [\`build-log\`](${context.payload.repository.html_url}/actions/runs/${context.runId})`
+            ].join("\n");
+
+            // Search for existing comment with marker
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+
+            const existingComment = comments.find(comment => 
+              comment.body && comment.body.includes(marker)
+            );
+
+            if (existingComment) {
+              // Update existing comment
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existingComment.id,
+                body
+              });
+              console.log('Updated existing comment:', existingComment.id);
+            } else {
+              // Create new comment
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body
+              });
+              console.log('Created new comment');
+            }
+
+      - name: Fail the job if build failed
+        if: steps.build.outputs.exit_code != '0'
+        run: exit 1
