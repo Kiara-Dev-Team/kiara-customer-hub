@@ -9,6 +9,7 @@ import { fullNavigation } from "@/lib/navigation"
 export default function QuickLinksPage() {
   return (
     <DocsLayout navigation={fullNavigation} title="Quick Links">
+    <DocsLayout navigation={navigation}>
       <section className="mb-12">
         <h1 className="text-4xl font-bold mb-4">
           <T keyName="quick.title" />
