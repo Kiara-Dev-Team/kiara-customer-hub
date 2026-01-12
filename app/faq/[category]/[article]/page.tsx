@@ -82,7 +82,7 @@ export default async function ArticlePage({ params }: PageProps) {
   const nextArticle = currentIndex < category.articles.length - 1 ? category.articles[currentIndex + 1] : null
 
   return (
-    <DocsLayout navigation={navigation} title={article.title}>
+    <DocsLayout navigation={navigation}>
       {/* Breadcrumb */}
       <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
         <Link href="/faq" className="hover:text-primary">
