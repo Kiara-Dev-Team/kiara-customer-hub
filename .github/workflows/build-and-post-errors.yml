@@ -1,0 +1,81 @@
+name: Build and Post Errors
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "pnpm"
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Build (capture logs)
+        id: build
+        shell: bash
+        run: |
+          set +e
+          pnpm build 2>&1 | tee build.log
+          echo "exit_code=${PIPESTATUS[0]}" >> $GITHUB_OUTPUT
+          exit 0
+
+      - name: Extract top 7 error blocks
+        if: steps.build.outputs.exit_code != '0'
+        shell: bash
+        run: |
+          # Try to extract error-ish lines; tweak patterns for your stack.
+          # This prints a compact summary for GitHub comments.
+          awk '
+            /error|ERROR|✖|Failed|failed|Type error|Module not found|Cannot find module|TS[0-9]+:/ {
+              print
+            }
+          ' build.log | head -n 200 > errors.txt
+
+          # If you truly want exactly "7", keep first 7 matching lines:
+          awk 'NR<=7{print}' errors.txt > errors_top7.txt
+
+      - name: Upload full log artifact
+        if: steps.build.outputs.exit_code != '0'
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-log
+          path: build.log
+
+      - name: Comment on PR with top 7 errors
+        if: github.event_name == 'pull_request' && steps.build.outputs.exit_code != '0'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const top7 = fs.existsSync('errors_top7.txt') ? fs.readFileSync('errors_top7.txt', 'utf8') : '(no matches)';
+            const body = [
+              "❌ Build failed. Here are the top 7 error lines:",
+              "```",
+              top7.trim().slice(0, 65000),
+              "```",
+              "Full build log is uploaded as an Actions artifact: `build-log`."
+            ].join("\n");
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body
+            });
+
+      - name: Fail the job
+        if: steps.build.outputs.exit_code != '0'
+        run: exit 1
