@@ -1,6 +1,9 @@
 {
   "hero": {
-    "greeting": "Hello, I'm Dave Ishii"
+    "greeting": "Hello, I'm Dave Ishii",
+    "title": "Building the Future of Finance & AI",
+    "subtitle": "Empowering teams through innovation, technology, and human-centered design",
+    "getStarted": "Get Started"
   },
   "about": {
     "title": "About Me",
